@@ -23,6 +23,7 @@ export default function Home() {
                     <div className="flex justify-center flex-col items-center">
                         <Button stockName="S&P/ASX 200" stockCode="XJO"></Button>
                         <Button stockName="Rio Tinto" stockCode="RIO"></Button>
+                        <Button stockName="Whitehaven Coal" stockCode="WHC"></Button>
                     </div>   
                 </section>
                 <footer>
