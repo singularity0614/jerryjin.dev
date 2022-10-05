@@ -21,9 +21,9 @@ export default function Home() {
                 </section>
                 <section>
                     <div className="flex justify-center flex-col items-center">
-                        <Button stockName="S&P/ASX 200" stockCode="XJO" priceChange="0.11"></Button>
-                        <Button stockName="Rio Tinto" stockCode="RIO" priceChange="-0.11"></Button>
-                        <Button stockName="Whitehaven Coal" stockCode="WHC" priceChange="10.21"></Button>
+                        <Button stockName="S&P/ASX 200" stockCode="XJO" price="7402.92" priceChange="67.11"></Button>
+                        <Button stockName="Rio Tinto" stockCode="RIO" price="96.38" priceChange="-10.00"></Button>
+                        <Button stockName="Whitehaven Coal" stockCode="WHC" price="9.71" priceChange="1.21"></Button>
                     </div>   
                 </section>
                 <footer>
