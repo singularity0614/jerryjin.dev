@@ -10,8 +10,12 @@ export default function Home() {
             </Head>      
             <main className="font-sans">
                 <header>
-                    <div className="my-6 flex justify-center items-center">
-                        <h1 className="font-bold text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#049cb7] to-[#3dd9bd]">Stock Dashboard</h1>
+                    <div className="flex justify-center mt-[10vw] xl:mt-32 mb-16">
+                        <div className="w-[384px] md:w-[50vw] xl:w-[640px]">
+                            <p className="text-xs text-gray-500 font-medium pl-[5px] mb-3">STOCK DASHBOARD</p>
+                            <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
+                            <h2 className="animate-fade-in-from-bottom font-semibold text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#049CB7] to-[#3DD9BD]">stock dashboard</h2>
+                        </div>
                     </div>
                 </header>
                 <section>
