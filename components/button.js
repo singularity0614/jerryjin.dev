@@ -1,5 +1,8 @@
 function StockDisplay(props) {
-    const colour = parseFloat(props.priceChange) > 0 ? "#137333" : (parseFloat(props.priceChange) < 0 ? "#FF0000" : "#000000");
+    const priceChange = parseFloat(props.priceChange);
+    console.log(priceChange);
+    const colour = priceChange > 0 ? "#137333" : (priceChange < 0 ? "#FF0000" : "#000000");
+    console.log(colour);
     const sign = parseFloat(props.priceChange) > 0 ? "+" : (parseFloat(props.priceChange) < 0 ? "-" : "");
 
     return (
@@ -12,7 +15,7 @@ function StockDisplay(props) {
                     </div>
                     <div className="flex justify-between items-center w-64 font-semibold">
                         <div className="p-1.5">${props.price}</div>
-                        <div className={`text-[${colour}]`}>{sign}${props.priceChange}</div>
+                        <div className={`text-[${colour}]`}>{sign}${priceChange}</div>
                         <div className={`flex justify-evenly items-center p-1.5 rounded-lg text-[${colour}] bg-[#e8f4eb]`}>
                             <svg width="16" height="16" viewBox="0 0 24 24" focusable="false" className={`fill-[${colour}]`}><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"></path></svg>
                             <div>{props.pcChange}</div>
