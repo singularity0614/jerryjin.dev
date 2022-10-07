@@ -1,10 +1,11 @@
 function StockDisplay(props) {
-    const price = parseFloat(props.price);
-    const priceChange = parseFloat(props.priceChange);
+    const price = props.price;
+    const priceChange = props.priceChange;
     const colour = priceChange > 0 ? "text-[#137333]" : (priceChange < 0 ? "text-[#a50e0e]" : "text-[#3c4043]");
     const backgroundColour = priceChange > 0 ? "bg-[#e8f4eb]" : (priceChange < 0 ? "bg-[#fce8e6]" : "bg-[#e8eaed]");
-    const sign = parseFloat(props.priceChange) > 0 ? "+" : (parseFloat(props.priceChange) < 0 ? "-" : "");
+    const sign = priceChange > 0 ? "+" : (parseFloat(props.priceChange) < 0 ? "-" : "");
     const percentChange = (priceChange/(price-priceChange)*100).toFixed(2);
+    const dollarSign = props.type === "stock" ? "$" : "";
 
     let arrow;
 
@@ -26,10 +27,10 @@ function StockDisplay(props) {
                     </div>
                     <div className="flex justify-end items-center font-medium">
                         <div className="flex justify-end items-center">
-                            <div className="p-1.5">${price.toFixed(2)}</div>
+                            <div className="p-1.5">{dollarSign}{price.toFixed(2)}</div>
                         </div>
                         <div className="w-[96px] flex justify-end items-center">
-                            <div className={colour}>{sign}${Math.abs(priceChange).toFixed(2)}</div>
+                            <div className={colour}>{sign}{dollarSign}{Math.abs(priceChange).toFixed(2)}</div>
                         </div>
                         <div className="w-[116px] flex justify-end items-center">
                             <div className={`flex justify-evenly items-center p-1.5 rounded-lg ${colour} ${backgroundColour}`}>
