@@ -14,10 +14,11 @@ class Stock {
 
 export default function Home() {
     let stockList = [
-        new Stock("S&P/ASX 200", "XJO", 7402.92, 67.11, "index"),
-        new Stock("Rio Tinto Limited", "RIO", 96.38, -10.00),
-        new Stock("Whitehaven Coal Ltd", "WHC", 9.71, 1.21),
+        new Stock("Pilbara Minerals Ltd", "PLS", 5.42, 0.02),
+        new Stock("Rio Tinto Limited", "RIO", 96.67, -1.38),
         new Stock("Wesfarmers Ltd", "WES", 44.68, -0.36),
+        new Stock("Whitehaven Coal Ltd", "WHC", 10.96, 0.50),
+        new Stock("S&P/ASX 200", "XJO", 6762.80, -54.70, "index"),
     ];
 
     const [filteredList, setFilteredList] = new useState(stockList);
@@ -62,6 +63,20 @@ export default function Home() {
                     </div>
                 </section>
                 <section>
+                    <div className="flex justify-between items-center w-[50vw] mx-auto mt-8 text-sm text-gray-500">
+                        <div className="pl-[26px]">Name/Code</div>
+                        <div className="flex justify-end items-center pr-[26px]">
+                            <div className="flex justify-end items-center">
+                                <div className="px-1.5">Price</div>
+                            </div>
+                            <div className="w-[96px] flex justify-end items-center">
+                                <div>$ Change</div>
+                            </div>
+                            <div className="w-[116px] flex justify-end items-center">
+                                <div className="px-1.5">% Change</div>
+                            </div>
+                        </div>
+                    </div>
                     <div className="flex justify-center flex-col items-center">
                         {filteredList.map((item, index) => (
                             <Button key={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange}></Button>

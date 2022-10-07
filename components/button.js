@@ -19,7 +19,7 @@ function StockDisplay(props) {
 
     return (
         <>
-            <div className="flex justify-center items-center w-[50vw] rounded-xl p-0.5 mx-auto my-4 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
+            <div className="flex justify-center items-center w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
                 <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
                     <div>
                         <div>{props.stockName}</div>
