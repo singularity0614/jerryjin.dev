@@ -43,14 +43,14 @@ export default function Home() {
                 <title>Stock Watcher</title>
                 <meta name="description" content="Independent Project - Stock Watcher Website" />
             </Head>      
-            <Gradient></Gradient>
-            <main className="font-sans pl-[calc(100vw-100%)]">
-                <header>
-                    <div className="flex justify-center mt-[10vw] xl:mt-32 mb-16">
-                        <div className="w-[384px] md:w-[50vw] xl:w-[640px]">
+            <main className="font-sans pl-[calc(100vw-100%)] relative">
+                <Gradient className="absolute block -z-10 top-0 left-0"></Gradient>
+                <header className="absolute top-0 left-0 right-0">
+                    <div className="flex justify-center mt-64 mb-16">
+                        <div className="w-[384px] md:w-[50vw] xl:w-[640px] text-[#111436]">
                             <p className="text-xs text-gray-500 font-medium pl-[5px] mb-3">STOCK DASHBOARD</p>
                             <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
-                            <h2 className="animate-fade-in-from-bottom font-semibold text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#049CB7] to-[#3DD9BD]">stock dashboard</h2>
+                            <h2 className="animate-fade-in-from-bottom font-semibold text-7xl">stock dashboard</h2>
                         </div>
                     </div>
                 </header>
