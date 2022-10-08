@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import Button from "../../../../../components/button";
+import Gradient from "../../../../../components/gradientHeader";
 
 class Stock {
     constructor(name, code, price, priceChange, type="stock") {
@@ -42,6 +43,7 @@ export default function Home() {
                 <title>Stock Watcher</title>
                 <meta name="description" content="Independent Project - Stock Watcher Website" />
             </Head>      
+            <Gradient></Gradient>
             <main className="font-sans pl-[calc(100vw-100%)]">
                 <header>
                     <div className="flex justify-center mt-[10vw] xl:mt-32 mb-16">
