@@ -29,11 +29,11 @@ module.exports = {
         'fade-in-from-bottom': {
           '0%': {
             opacity: '0',
-            transform: 'translate(0, 10px) scale(1)',
+            transform: 'translate3d(0, 10px, 10px) scale(1)',
           },
           '100%': {
             opacity: '1',
-            transform: 'translate(0, 0) scale(1)',
+            transform: 'translate3d(0, 0, 10px) scale(1)',
           }
         }
       },

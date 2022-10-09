@@ -50,17 +50,17 @@ export default function Home() {
                         <div className="w-[384px] md:w-[50vw] xl:w-[640px]">
                             <p className="text-xs text-gray-500 font-medium pl-[5px] mb-3">STOCK DASHBOARD</p>
                             <div className="relative">
-                                <div className="absolute -z-10 text-[#292929]">
-                                    <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
-                                    <h2 className="animate-fade-in-from-bottom font-semibold text-7xl">stock dashboard</h2>
-                                </div>
-                                <div className="absolute z-20 opacity-10 text-[#3a3a3a]">
-                                    <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
-                                    <h2 className="animate-fade-in-from-bottom font-semibold text-7xl">stock dashboard</h2>
+                                <div className="absolute -z-10 text-[#292929] ">
+                                    <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl [-webkit-transform:translate3d(0,0,0)]">hi.</h1>
+                                    <h2 className="animate-fade-in-from-bottom font-semibold text-7xl [-webkit-transform:translate3d(0,0,0)]">stock dashboard</h2>
                                 </div>
                                 <div className="absolute z-10 text-[#3a3a3a] mix-blend-color-burn">
-                                    <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
-                                    <h2 className="animate-fade-in-from-bottom font-semibold text-7xl">stock dashboard</h2>
+                                    <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl [-webkit-transform:translate3d(0,0,0)]">hi.</h1>
+                                    <h2 className="animate-fade-in-from-bottom font-semibold text-7xl [-webkit-transform:translate3d(0,0,0)]">stock dashboard</h2>
+                                </div>
+                                <div className="absolute z-20 opacity-10 text-[#3a3a3a]">
+                                    <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl [-webkit-transform:translate3d(0,0,0)]">hi.</h1>
+                                    <h2 className="animate-fade-in-from-bottom font-semibold text-7xl [-webkit-transform:translate3d(0,0,0)]">stock dashboard</h2>
                                 </div>
                             </div>
                         </div>
