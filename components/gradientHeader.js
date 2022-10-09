@@ -9,7 +9,7 @@ function Background() {
     });
     return (
         <>
-            <canvas id="gradient-canvas" className="w-[100vw] h-1/2 origin-bottom-left -skew-y-6"></canvas>
+            <canvas id="gradient-canvas" className="w-[100%] h-1/2 origin-bottom-left -skew-y-6"></canvas>
             <style jsx>{`
                 #gradient-canvas {
                     --gradient-color-1:#3DD9BD;

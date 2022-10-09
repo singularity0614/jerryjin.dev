@@ -43,7 +43,7 @@ export default function Home() {
                 <title>Stock Watcher</title>
                 <meta name="description" content="Independent Project - Stock Watcher Website" />
             </Head>      
-            <main className="font-sans pl-[calc(100vw-100%)] relative">
+            <main className="font-sans relative">
                 <Gradient className="absolute block -z-10 top-0 left-0"></Gradient>
                 <header className="absolute top-0 left-0 right-0">
                     <div className="flex justify-center mt-64 mb-16">
