@@ -9,6 +9,9 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  experimental: {
+    urlImports: ['https://gist.githack.com/jordienr/'],
+  },
 }
 
 module.exports = nextConfig
