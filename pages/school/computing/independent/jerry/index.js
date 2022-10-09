@@ -44,13 +44,25 @@ export default function Home() {
                 <meta name="description" content="Independent Project - Stock Watcher Website" />
             </Head>      
             <main className="font-sans relative">
-                <Gradient className="absolute block -z-10 top-0 left-0"></Gradient>
+                <Gradient className="absolute block -z-20 top-0 left-0"></Gradient>
                 <header className="absolute top-0 left-0 right-0">
                     <div className="flex justify-center mt-64 mb-16">
-                        <div className="w-[384px] md:w-[50vw] xl:w-[640px] text-[#111436]">
+                        <div className="w-[384px] md:w-[50vw] xl:w-[640px]">
                             <p className="text-xs text-gray-500 font-medium pl-[5px] mb-3">STOCK DASHBOARD</p>
-                            <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
-                            <h2 className="animate-fade-in-from-bottom font-semibold text-7xl">stock dashboard</h2>
+                            <div className="relative">
+                                <div className="absolute -z-10 text-[#292929]">
+                                    <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
+                                    <h2 className="animate-fade-in-from-bottom font-semibold text-7xl">stock dashboard</h2>
+                                </div>
+                                <div className="absolute z-20 opacity-10 text-[#3a3a3a]">
+                                    <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
+                                    <h2 className="animate-fade-in-from-bottom font-semibold text-7xl">stock dashboard</h2>
+                                </div>
+                                <div className="absolute z-10 text-[#3a3a3a] mix-blend-color-burn">
+                                    <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
+                                    <h2 className="animate-fade-in-from-bottom font-semibold text-7xl">stock dashboard</h2>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </header>
