@@ -1,3 +1,6 @@
+import React from "react";
+import Chart from "chart.js/auto";
+
 function StockDisplay(props) {
     const price = props.price;
     const priceChange = props.priceChange;
@@ -6,6 +9,7 @@ function StockDisplay(props) {
     const sign = priceChange > 0 ? "+" : (parseFloat(props.priceChange) < 0 ? "-" : "");
     const percentChange = (priceChange/(price-priceChange)*100).toFixed(2);
     const dollarSign = props.type === "stock" ? "$" : "";
+    const index = props.index;
 
     let arrow;
 
@@ -17,11 +21,17 @@ function StockDisplay(props) {
         arrow = null;
     }
 
+    const [openedCollapse, setOpenedCollapse] = React.useState("collapse1");
+
+    const expandContent = () => {
+        setOpenedCollapse(openedCollapse === `collapse${index}` ? "" : `collapse${index}`);
+    }
+
     return (
         <>
-            <div className="flex justify-center items-center w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
+            <div onClick={expandContent} className="button flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]" aria-expanded={openedCollapse === `collapse${index}`}>
                 <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
-                    <div>
+                    <div className="">
                         <div>{props.stockName}</div>
                         <div className="text-sm text-slate-500">{props.stockCode}</div>
                     </div>
@@ -41,6 +51,9 @@ function StockDisplay(props) {
                     </div>
                 </div>
             </div>
+            {/*<div aria-labelledby={`heading${index}`}>
+                hello
+    </div>*/}
         </>
     );
 }

@@ -20,8 +20,8 @@ function Background() {
             `}</style>*/}
             <style jsx>{`
             #gradient-canvas {
-                --gradient-color-1:#ef008f;
-                --gradient-color-2:#6ec3f4;
+                --gradient-color-1:#3DD9BD;
+                --gradient-color-2:#049CB7;
                 --gradient-color-3:#7038ff;
                 --gradient-color-4:#e2e2e2;                
             }
