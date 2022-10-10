@@ -48,7 +48,7 @@ export default function Home() {
                 <header className="absolute top-0 left-0 right-0">
                     <div className="flex justify-center mt-64 mb-16">
                         <div className="w-[384px] md:w-[50vw] xl:w-[640px]">
-                            <p className="text-xs text-gray-500 font-medium pl-[5px] mb-3 mix-blend-color-dodge">STOCK DASHBOARD</p>
+                            <p className="text-xs text-gray-500 z-10 font-medium pl-[5px] mb-3 mix-blend-color-dodge [-webkit-transform:translate3d(0,0,0)]">STOCK DASHBOARD</p>
                             <div className="relative">
                                 <div className="absolute -z-10 text-[#292929] ">
                                     <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl [-webkit-transform:translate3d(0,0,0)]">hi.</h1>
