@@ -1,7 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import Chart from "chart.js/auto";
 
 function StockDisplay(props) {
+    const name = props.stockName;
+    const code = props.stockCode;
     const price = props.price;
     const priceChange = props.priceChange;
     const colour = priceChange > 0 ? "text-[#137333]" : (priceChange < 0 ? "text-[#a50e0e]" : "text-[#3c4043]");
@@ -9,7 +12,6 @@ function StockDisplay(props) {
     const sign = priceChange > 0 ? "+" : (parseFloat(props.priceChange) < 0 ? "-" : "");
     const percentChange = (priceChange/(price-priceChange)*100).toFixed(2);
     const dollarSign = props.type === "stock" ? "$" : "";
-    const index = props.index;
 
     let arrow;
 
@@ -21,13 +23,15 @@ function StockDisplay(props) {
         arrow = null;
     }
 
+    const [collapse, setCollapse] = new useState(false);
+
     return (
         <>
-            <div className="button flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
+            <div onClick={() => setCollapse(!collapse)} className="button flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
                 <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
                     <div className="">
-                        <div>{props.stockName}</div>
-                        <div className="text-sm text-slate-500">{props.stockCode}</div>
+                        <div>{name}</div>
+                        <div className="text-sm text-slate-500">{code}</div>
                     </div>
                     <div className="flex justify-end items-center font-medium">
                         <div className="flex justify-end items-center">
@@ -45,6 +49,25 @@ function StockDisplay(props) {
                     </div>
                 </div>
             </div>
+            {
+                collapse === true
+                ? <div className={`animate-fade-in-from-bottom flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]`}>
+                    <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
+                        {name}
+                        <br/>
+                        ASX: {code}
+                        <br/>
+                        {name}
+                        <br/>
+                        ASX: {code}
+                        <br/>
+                        {name}
+                        <br/>
+                        ASX: {code}
+                    </div>
+                </div>
+                : null
+            }
         </>
     );
 }

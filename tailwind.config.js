@@ -35,7 +35,18 @@ module.exports = {
             opacity: '1',
             transform: 'translate3d(0, 0, 10px) scale(1)',
           }
-        }
+        },
+        'slide-in-from-top': {
+          '0%': {
+            
+          },
+          '99%': {
+
+          },
+          '100%': {
+
+          }
+        },
       },
       animation: {
         'fade-in-from-bottom': 'fade-in-from-bottom 800ms cubic-bezier(0.4, 0, 0.25, 1)',
