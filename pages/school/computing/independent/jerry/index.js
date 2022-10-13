@@ -18,7 +18,7 @@ export default function Home() {
         new Stock("Pilbara Minerals Ltd", "PLS", 5.42, 0.02),
         new Stock("Rio Tinto Limited", "RIO", 96.67, -1.38),
         new Stock("Wesfarmers Ltd", "WES", 44.68, -0.36),
-        new Stock("Whitehaven Coal Ltd", "WHC", 10.96, 0.50),
+        new Stock("Whitehaven Coal Ltd", "WHC", 10.96, 6.50),
         new Stock("S&P/ASX 200", "XJO", 6762.80, -54.70, "index"),
     ];
 
