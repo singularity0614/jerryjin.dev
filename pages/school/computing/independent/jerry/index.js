@@ -40,8 +40,8 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Stock Watcher</title>
-                <meta name="description" content="Independent Project - Stock Watcher Website" />
+                <title>Stock Dashboard</title>
+                <meta name="description" content="Independent Project - Stock Dashboard Website" />
             </Head>      
             <main className="font-sans relative">
                 <Gradient className="absolute block -z-20 top-0 left-0"></Gradient>
@@ -94,7 +94,7 @@ export default function Home() {
                     <div className="flex justify-center flex-col items-center">
                         {filteredList.length !== 0
                             ? filteredList.map((item, index) => (
-                                <Button key={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange}></Button>
+                                <Button key={index} index={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange}></Button>
                             ))
                             : <div className="button flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
                                 <div className="flex justify-center items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
