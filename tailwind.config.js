@@ -89,10 +89,10 @@ module.exports = {
       },
       animation: {
         'fade-in-from-bottom': 'fade-in-from-bottom 800ms cubic-bezier(0.4, 0, 0.25, 1)',
-        'fade-in': 'fade-in 800ms cubic-bezier(0.4, 0, 0.25, 1) forwards',
-        'fade-out': 'fade-out 800ms cubic-bezier(0.4, 0, 0.25, 1) forwards',
-        'slide-in-from-top': 'slide-in-from-top 1000ms forwards',
-        'slide-out-to-top': 'slide-out-to-top 1000ms forwards',
+        'fade-in': 'fade-in 600ms cubic-bezier(0.4, 0, 0.25, 1) forwards',
+        'fade-out': 'fade-out 600ms cubic-bezier(0.4, 0, 0.25, 1) forwards',
+        'slide-in-from-top': 'slide-in-from-top 800ms forwards',
+        'slide-out-to-top': 'slide-out-to-top 800ms forwards',
       }
     },
   },

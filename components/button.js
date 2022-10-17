@@ -45,7 +45,6 @@ function StockDisplay(props) {
     const percentChange = (priceChange/(price-priceChange)*100).toFixed(2);
     const dollarSign = props.type === "stock" ? "$" : "";
     const index = props.index;
-    console.log(index);
 
     let arrow;
 
@@ -57,11 +56,11 @@ function StockDisplay(props) {
         arrow = null;
     }
 
-    const [collapse, setCollapse] = new useState("collapsenone");
+    const [collapse, setCollapse] = props.collapse;
 
     return (
         <>
-            <div onClick={() => setCollapse(collapse[8] !== index ? `collapse${index}` : "collapsenone")} className="button flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
+            <div onClick={() => setCollapse(parseInt(collapse[8]) !== index ? `collapse${index}` : "collapsenone")} className="button flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
                 <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
                     <div className="">
                         <div>{name}</div>

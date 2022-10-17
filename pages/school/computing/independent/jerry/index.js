@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "../../../../../components/button";
 import Gradient from "../../../../../components/gradientHeader";
 
@@ -31,11 +31,45 @@ export default function Home() {
           return item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1 || item.code.toLowerCase().indexOf(query.toLowerCase()) !== -1;
         });
         setFilteredList(updatedList);
+        setCollapse("collapsenone");
     };
-
+    
+    const [filterValues, setFilterValues] = new useState({
+        select: "above",
+        number: "",
+    });
+    
     const filterByType = (event) => {
-        
+        const value = event.target.value;
+        setFilterValues((filterValues) => {
+            const newValues = {
+                ...filterValues,
+                [event.target.name]: value,
+            };
+            console.log(newValues);
+            let updatedList = [...stockList];
+            if (newValues.number !== "") {
+                if (newValues.select === "above") {
+                    updatedList = updatedList.filter((item) => {
+                        return item.price > parseInt(newValues.number);
+                    });
+                } else if (newValues.select === "below") {
+                    updatedList = updatedList.filter((item) => {
+                        return item.price < parseInt(newValues.number);
+                    });
+                } else if (newValues.select === "equal") {
+                    updatedList = updatedList.filter((item) => {
+                        return item.price === parseInt(newValues.number);
+                    });
+                }
+                return newValues;
+            }
+            setFilteredList(updatedList);
+            setCollapse("collapsenone");
+        });
     }
+
+    const [collapse, setCollapse] = new useState("collapsenone");
 
     return (
         <>
@@ -68,10 +102,21 @@ export default function Home() {
                 </header>
                 <section>
                     <div className="flex justify-center items-center">
-                        <div className="flex justify-end items-center w-[50vw] m-4">
-                            <div className="search-header flex justify-center items-center">
-                                <div className="search-text mx-2">Search:</div>
-                                <input className="search-box px-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg" onChange={filterBySearch} />
+                        <div className="flex justify-between items-center w-[50vw] m-4">
+                            <div className="flex justify-center items-center">
+                                <label htmlFor="filter" className="px-1 flex">Filter:</label>
+                                <div id="filter" name="filter" className="flex justify-center items-center" onChange={filterByType}>
+                                    <select name="select">
+                                        <option value="above" className="p-1">Above</option>
+                                        <option value="below" className="p-0.5">Below</option>
+                                        <option value="equal" className="p-0.5">Equal</option>
+                                    </select>
+                                    <input name="number" className="px-1 mx-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg" onChange={filterByType} type="number"/>
+                                </div>
+                            </div>
+                            <div className="flex justify-center items-center">
+                                <label htmlFor="search" className="mx-2">Search:</label>
+                                <input id="search" name="search" className="px-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg" onChange={filterBySearch} />
                             </div>
                         </div>
                     </div>
@@ -94,7 +139,7 @@ export default function Home() {
                     <div className="flex justify-center flex-col items-center">
                         {filteredList.length !== 0
                             ? filteredList.map((item, index) => (
-                                <Button key={index} index={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange}></Button>
+                                <Button collapse={[collapse, setCollapse]} key={index} index={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange}></Button>
                             ))
                             : <div className="button flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
                                 <div className="flex justify-center items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
