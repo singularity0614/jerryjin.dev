@@ -45,7 +45,6 @@ export default function Home() {
             ...filterValues,
             [event.target.name]: value,
         };
-        console.log(filterValues);
         let updatedList = [...stockList];
         if (filterValues.number !== "") {
             if (filterValues.select === "above") {
@@ -108,7 +107,7 @@ export default function Home() {
                                         <option value="below" className="p-0.5">Below</option>
                                         <option value="equal" className="p-0.5">Equal</option>
                                     </select>
-                                    <input name="number" className="px-1 mx-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg" onChange={filterByType} type="number"/>
+                                    <input name="number" className="px-1 mx-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg w-20" onChange={filterByType} type="number"/>
                                 </div>
                             </div>
                             <div className="flex justify-center items-center">
