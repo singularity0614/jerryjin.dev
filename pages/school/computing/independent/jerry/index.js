@@ -13,6 +13,11 @@ class Stock {
     }
 }
 
+const filterValues = {
+    select: "above",
+    number: "",
+}
+
 export default function Home() {
     let stockList = [
         new Stock("Pilbara Minerals Ltd", "PLS", 5.42, 0.02),
@@ -34,39 +39,31 @@ export default function Home() {
         setCollapse("collapsenone");
     };
     
-    const [filterValues, setFilterValues] = new useState({
-        select: "above",
-        number: "",
-    });
-    
     const filterByType = (event) => {
         const value = event.target.value;
-        setFilterValues((filterValues) => {
-            const newValues = {
-                ...filterValues,
-                [event.target.name]: value,
-            };
-            console.log(newValues);
-            let updatedList = [...stockList];
-            if (newValues.number !== "") {
-                if (newValues.select === "above") {
-                    updatedList = updatedList.filter((item) => {
-                        return item.price > parseInt(newValues.number);
-                    });
-                } else if (newValues.select === "below") {
-                    updatedList = updatedList.filter((item) => {
-                        return item.price < parseInt(newValues.number);
-                    });
-                } else if (newValues.select === "equal") {
-                    updatedList = updatedList.filter((item) => {
-                        return item.price === parseInt(newValues.number);
-                    });
-                }
-                return newValues;
+        filterValues = {
+            ...filterValues,
+            [event.target.name]: value,
+        };
+        console.log(filterValues);
+        let updatedList = [...stockList];
+        if (filterValues.number !== "") {
+            if (filterValues.select === "above") {
+                updatedList = updatedList.filter((item) => {
+                    return item.price > parseInt(filterValues.number);
+                });
+            } else if (filterValues.select === "below") {
+                updatedList = updatedList.filter((item) => {
+                    return item.price < parseInt(filterValues.number);
+                });
+            } else if (filterValues.select === "equal") {
+                updatedList = updatedList.filter((item) => {
+                    return item.price === parseInt(filterValues.number);
+                });
             }
-            setFilteredList(updatedList);
-            setCollapse("collapsenone");
-        });
+        }
+        setFilteredList(updatedList);
+        setCollapse("collapsenone");
     }
 
     const [collapse, setCollapse] = new useState("collapsenone");
