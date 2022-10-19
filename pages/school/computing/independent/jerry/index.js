@@ -49,15 +49,15 @@ export default function Home() {
         if (filterValues.number !== "") {
             if (filterValues.select === "above") {
                 updatedList = updatedList.filter((item) => {
-                    return item.price > parseInt(filterValues.number);
+                    return item.price > parseFloat(filterValues.number);
                 });
             } else if (filterValues.select === "below") {
                 updatedList = updatedList.filter((item) => {
-                    return item.price < parseInt(filterValues.number);
+                    return item.price < parseFloat(filterValues.number);
                 });
             } else if (filterValues.select === "equal") {
                 updatedList = updatedList.filter((item) => {
-                    return item.price === parseInt(filterValues.number);
+                    return item.price === parseFloat(filterValues.number);
                 });
             }
         }
@@ -139,7 +139,7 @@ export default function Home() {
                             ))
                             : <div className="button flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
                                 <div className="flex justify-center items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
-                                    404: Your search returned no stocks :/
+                                    404: Your query returned no stocks :/
                                 </div>
                             </div>
                         }
