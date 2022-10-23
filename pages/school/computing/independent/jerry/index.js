@@ -20,6 +20,7 @@ const filterValues = {
 
 export default function Home() {
     let stockList = [
+        new Stock("Commonwealth Bank of Australia", "CBA", 99.28, -1.49),
         new Stock("Pilbara Minerals Ltd", "PLS", 5.42, 0.02),
         new Stock("Rio Tinto Limited", "RIO", 96.67, -1.38),
         new Stock("Wesfarmers Ltd", "WES", 44.68, -0.36),
@@ -98,7 +99,7 @@ export default function Home() {
                 </header>
                 <section>
                     <div className="flex justify-center items-center">
-                        <div className="flex justify-between items-center w-[50vw] m-4">
+                        <div className="flex justify-between items-center w-[720px] xl:w-[50vw] m-4">
                             <div className="flex justify-center items-center">
                                 <label htmlFor="filter" className="px-1 flex">Filter:</label>
                                 <div id="filter" name="filter" className="flex justify-center items-center" onChange={filterByType}>
@@ -118,7 +119,7 @@ export default function Home() {
                     </div>
                 </section>
                 <section>
-                    <div className="flex justify-between items-center w-[50vw] mx-auto mt-8 text-sm text-gray-500">
+                    <div className="flex justify-between items-center w-[720px] xl:w-[50vw] mx-auto mt-8 text-sm text-gray-500">
                         <div className="pl-[26px]">Name/Code</div>
                         <div className="flex justify-end items-center pr-[26px]">
                             <div className="flex justify-end items-center">
@@ -137,8 +138,8 @@ export default function Home() {
                             ? filteredList.map((item, index) => (
                                 <Button collapse={[collapse, setCollapse]} key={index} index={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange}></Button>
                             ))
-                            : <div className="button flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
-                                <div className="flex justify-center items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
+                            : <div className="button flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
+                                <div className="flex justify-center items-center bg-white px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
                                     404: Your query returned no stocks :/
                                 </div>
                             </div>

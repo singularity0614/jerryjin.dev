@@ -60,8 +60,8 @@ function StockDisplay(props) {
 
     return (
         <>
-            <div onClick={() => setCollapse(parseInt(collapse[8]) !== index ? `collapse${index}` : "collapsenone")} className="button flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
-                <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
+            <div onClick={() => setCollapse(parseInt(collapse[8]) !== index ? `collapse${index}` : "collapsenone")} className="button flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
+                <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
                     <div className="">
                         <div>{name}</div>
                         <div className="text-sm text-slate-500">{code}</div>
@@ -82,8 +82,8 @@ function StockDisplay(props) {
                     </div>
                 </div>
             </div>
-            <div className={`expanded -z-10 ${collapse === `collapse${index}` ? "animate-slide-in-from-top" : "animate-slide-out-to-top"} flex justify-center w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]`}>
-                <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
+            <div className={`expanded -z-10 ${collapse === `collapse${index}` ? "animate-slide-in-from-top" : "animate-slide-out-to-top"} flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]`}>
+                <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
                     <div className={`${collapse === `collapse${index}` ? "animate-fade-in" : "animate-fade-out"}`}>                            
                         {name}
                         <br/>
