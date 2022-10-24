@@ -1,95 +1,77 @@
-import React from 'react';
-import * as d3 from 'd3';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+} from "chart.js";
 
-const useD3 = (renderChartFn, dependencies) => {
-    const ref = React.useRef();
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Title,
+  Tooltip,
+  Legend,
+);
 
-    React.useEffect(() => {
-        renderChartFn(d3.select(ref.current));
-        return () => {};
-      }, dependencies);
-    return ref;
-}
+import { Line } from "react-chartjs-2";
 
-function BarChart({ data }) {
-  const ref = useD3(
-    (svg) => {
-      const height = 160;
-      const width = 600;
-      const margin = { top: 20, right: 30, bottom: 30, left: 40 };
-
-      const x = d3
-        .scaleBand()
-        .domain(data.map((d) => d.year))
-        .rangeRound([margin.left, width - margin.right])
-        .padding(0.1);
-
-      const y1 = d3
-        .scaleLinear()
-        .domain([0, d3.max(data, (d) => d.sales)])
-        .rangeRound([height - margin.bottom, margin.top]);
-
-      const xAxis = (g) =>
-        g.attr("transform", `translate(0,${height - margin.bottom})`).call(
-          d3
-            .axisBottom(x)
-            .tickValues(
-              d3
-                .ticks(...d3.extent(x.domain()), width / 40)
-                .filter((v) => x(v) !== undefined)
-            )
-            .tickSizeOuter(0)
-        );
-
-      const y1Axis = (g) =>
-        g
-          .attr("transform", `translate(${margin.left},0)`)
-          .style("color", "steelblue")
-          .call(d3.axisLeft(y1).ticks(null, "s"))
-          .call((g) => g.select(".domain").remove())
-          .call((g) =>
-            g
-              .append("text")
-              .attr("x", -margin.left)
-              .attr("y", 10)
-              .attr("fill", "currentColor")
-              .attr("text-anchor", "start")
-              .text(data.y1)
-          );
-
-      svg.select(".x-axis").call(xAxis);
-      svg.select(".y-axis").call(y1Axis);
-
-      svg
-        .select(".plot-area")
-        .attr("fill", "steelblue")
-        .selectAll(".bar")
-        .data(data)
-        .join("rect")
-        .attr("class", "bar")
-        .attr("x", (d) => x(d.year))
-        .attr("width", x.bandwidth())
-        .attr("y", (d) => y1(d.sales))
-        .attr("height", (d) => y1(0) - y1(d.sales));
+const options = {
+  plugins: {
+    legend: {
+      display: false,
     },
-    [data.length]
-  );
-
-  return (
-    <svg
-      ref={ref}
-      style={{
-        height: "100%",
-        width: "100%",
-        marginRight: "0px",
-        marginLeft: "0px",
-      }}
-    >
-      <g className="plot-area" />
-      <g className="x-axis" />
-      <g className="y-axis" />
-    </svg>
-  );
+    tooltips: {
+      
+    },
+  },
+  interaction: {
+    intersect: false,
+    mode: "index",
+  },
+  elements: {
+    line: {
+      tension: 0,
+      borderWidth: 2,
+      borderColor: "#137333",
+      fill: "start",
+      backgroundColor: "rgba(232, 244, 235, 0.3)",
+    },
+    point: {
+      radius: 0,
+      hitRadius: 0,
+    },    
+  },
+  scales: {
+    x: {
+      ticks: {
+        fontColor: "rgba(255,255,255,.7)",
+      },
+      scaleLabel: {
+        display: true,
+        labelString: "Month",
+        fontColor: "white",
+      },
+      grid: {
+        display: false,
+      },
+    },
+    y: {
+    },
+  },
 }
 
-export default BarChart;
+export default function LineGraph(props) {
+  return (
+    <>
+      <Line data={props.data} width={600} height={160} options={options}/>
+    </>
+  )
+}

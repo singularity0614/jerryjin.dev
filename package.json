@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "caniuse-lite": "^1.0.30001396",
-    "d3": "^7.6.1",
+    "chart.js": "^3.9.1",
     "express": "^4.18.1",
     "next": "^12.3.1",
     "react": "18.2.0",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "18.2.0",
     "yahoo-stock-api": "^1.1.10"
   },

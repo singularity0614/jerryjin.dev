@@ -70,14 +70,14 @@ module.exports = {
           },
           '100%': {
             margin: '0.5rem auto',
-            maxHeight: '200px',
+            maxHeight: '210px',
             transform: 'translate3d(0, 0, 0) scale(1)',
           },
         },
         'slide-out-to-top': {
           '0%': {
             margin: '0.5rem auto',
-            maxHeight: '200px',
+            maxHeight: '210px',
             transform: 'translate3d(0, 0px, 0) scale(1)',
           },
           '100%': {
