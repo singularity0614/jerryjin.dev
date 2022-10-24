@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import Button from "../../../../../components/button";
 import Gradient from "../../../../../components/gradientHeader";
+import yahooFinance from "yahoo-finance2";
 
 class Stock {
     constructor(name, code, price, priceChange, type="stock") {
@@ -18,12 +19,18 @@ const filterValues = {
     number: "",
 }
 
-export default function Home() {
+export async function getServerSideProps(name) {
+    const res = await yahooFinance.quoteSummary("CBA.AX");
+    const data = res.price.regularMarketPrice;
+    return {props: {data}};
+}
+
+export default function Home({data}) {
     let stockList = [
-        new Stock("Commonwealth Bank of Australia", "CBA", 99.28, -1.49),
+        new Stock("Commonwealth Bank of Australia", "CBA", data, -1.49),
         new Stock("Pilbara Minerals Ltd", "PLS", 5.42, 0.02),
         new Stock("Rio Tinto Limited", "RIO", 96.67, -1.38),
-        new Stock("Wesfarmers Ltd", "WES", 44.68, -0.36),
+        new Stock("Wesfarmers Ltd", "WES", 44.68, 0),
         new Stock("Whitehaven Coal Ltd", "WHC", 10.96, 6.50),
         new Stock("S&P/ASX 200", "XJO", 6762.80, -54.70, "index"),
     ];

@@ -5,7 +5,7 @@ const data = {
     labels: ["January", "February", "March", "April", "May", "June"],
     datasets: [
         {
-            data: [1.72, 2.26, 1.33, 5.30, 6.21, 4.86],
+            data: [1.42, 2.26, 1.33, 5.30, 6.21, 4.42],
         },
     ],
 }
@@ -64,7 +64,7 @@ function StockDisplay(props) {
                         {name}
                         <br/>
                         <div className="flex justify-center items-center">
-                            <StockGraph data={data}></StockGraph>
+                            <StockGraph data={data} priceChange={priceChange}></StockGraph>
                         </div>
                     </div>
                     <div>Volume: 200</div>
