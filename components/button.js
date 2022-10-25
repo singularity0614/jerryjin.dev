@@ -5,7 +5,7 @@ const data = {
     labels: ["January", "February", "March", "April", "May", "June"],
     datasets: [
         {
-            data: [1.42, 2.26, 1.33, 5.30, 6.21, 4.42],
+            data: [4.42, 2.26, 1.33, 5.30, 6.21, 2.42],
         },
     ],
 }
@@ -17,7 +17,7 @@ function StockDisplay(props) {
     const priceChange = props.priceChange;
     const colour = priceChange > 0 ? "text-[#137333]" : (priceChange < 0 ? "text-[#a50e0e]" : "text-[#3c4043]");
     const backgroundColour = priceChange > 0 ? "bg-[#e8f4eb]" : (priceChange < 0 ? "bg-[#fce8e6]" : "bg-[#e8eaed]");
-    const sign = priceChange > 0 ? "+" : (parseFloat(props.priceChange) < 0 ? "-" : "");
+    const sign = priceChange > 0 ? "+" : (priceChange < 0 ? "-" : "");
     const percentChange = (priceChange/(price-priceChange)*100).toFixed(2);
     const dollarSign = props.type === "stock" ? "$" : "";
     const index = props.index;

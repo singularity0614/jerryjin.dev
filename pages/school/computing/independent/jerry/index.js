@@ -19,21 +19,27 @@ const filterValues = {
     number: "",
 }
 
-export async function getServerSideProps(name) {
-    const res = await yahooFinance.quoteSummary("CBA.AX");
-    const data = res.price.regularMarketPrice;
+const stockArray = ["CBA.AX", "JIN.AX", "NHC.AX", "PLS.AX", "RIO.AX", "TLS.AX", "WES.AX", "WHC.AX", "WOW.AX", "YAL.AX", "^AXJO"];
+
+export async function getServerSideProps() {
+    const data = [];
+    for (let stock of stockArray) {
+        const res = await yahooFinance.quoteSummary(stock);
+        const name = stock[0] === "^" ? res.price.shortName : res.price.longName;
+        const price = res.price.regularMarketPrice;
+        const change = res.price.regularMarketChange;
+        data.push([name, stock, price, change]);
+    }
     return {props: {data}};
 }
 
 export default function Home({data}) {
-    let stockList = [
-        new Stock("Commonwealth Bank of Australia", "CBA", data, -1.49),
-        new Stock("Pilbara Minerals Ltd", "PLS", 5.42, 0.02),
-        new Stock("Rio Tinto Limited", "RIO", 96.67, -1.38),
-        new Stock("Wesfarmers Ltd", "WES", 44.68, 0),
-        new Stock("Whitehaven Coal Ltd", "WHC", 10.96, 6.50),
-        new Stock("S&P/ASX 200", "XJO", 6762.80, -54.70, "index"),
-    ];
+    const stockList = [];
+
+    for (let i=0; i<data.length; i++) {
+        const type = data[i][1][0] === "^" ? "index" : "stock";
+        stockList.push(new Stock(data[i][0], type === "stock" ? data[i][1].slice(0, 3) : data[i][1].slice(2, 5), data[i][2], data[i][3], type));
+    }
 
     const [filteredList, setFilteredList] = new useState(stockList);
 
@@ -54,18 +60,19 @@ export default function Home({data}) {
             [event.target.name]: value,
         };
         let updatedList = [...stockList];
-        if (filterValues.number !== "") {
+        let num = filterValues.number;
+        if (num !== "") {
             if (filterValues.select === "above") {
                 updatedList = updatedList.filter((item) => {
-                    return item.price > parseFloat(filterValues.number);
+                    return item.price > parseFloat(num);
                 });
             } else if (filterValues.select === "below") {
                 updatedList = updatedList.filter((item) => {
-                    return item.price < parseFloat(filterValues.number);
+                    return item.price < parseFloat(num);
                 });
             } else if (filterValues.select === "equal") {
                 updatedList = updatedList.filter((item) => {
-                    return item.price === parseFloat(filterValues.number);
+                    return item.price === parseFloat(num);
                 });
             }
         }
