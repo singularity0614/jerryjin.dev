@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
 import StockGraph from "./stockGraph";
 
-const data = {
-    labels: ["January", "February", "March", "April", "May", "June"],
-    datasets: [
-        {
-            data: [4.42, 2.26, 1.33, 5.30, 6.21, 2.42],
-        },
-    ],
-}
-
 function StockDisplay(props) {
     const name = props.stockName;
     const code = props.stockCode;
@@ -21,9 +12,10 @@ function StockDisplay(props) {
     const percentChange = (priceChange/(price-priceChange)*100).toFixed(2);
     const dollarSign = props.type === "stock" ? "$" : "";
     const index = props.index;
-
+    const historical = props.historical;
+    
     let arrow;
-
+    
     if (priceChange > 0) {
         arrow = <svg width="16" height="16" viewBox="0 0 24 24" focusable="false" className={`fill-[#137333]`}><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"></path></svg>;
     } else if (priceChange < 0) {
@@ -31,9 +23,21 @@ function StockDisplay(props) {
     } else {
         arrow = null;
     }
-
+    
     const [collapse, setCollapse] = props.collapse;
+    
+    const data = {
+        datasets: [
+            {
+                data: [],
+            },
+        ],
+    };
 
+    for (let i=0; i<historical[0].length; i++) {
+        data.datasets[0].data.push({x: historical[0][i], y: historical[1][i]});
+    }
+    
     return (
         <>
             <div onClick={() => setCollapse(parseInt(collapse[8]) !== index ? `collapse${index}` : "collapsenone")} className="button flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
@@ -67,7 +71,7 @@ function StockDisplay(props) {
                             <StockGraph data={data} priceChange={priceChange}></StockGraph>
                         </div>
                     </div>
-                    <div>Volume: 200</div>
+                    <div>sus</div>
                 </div>
             </div>        
         </>

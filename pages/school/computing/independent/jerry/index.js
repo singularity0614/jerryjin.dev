@@ -4,12 +4,24 @@ import Button from "../../../../../components/button";
 import Gradient from "../../../../../components/gradientHeader";
 import yahooFinance from "yahoo-finance2";
 
+/**
+ * For different graph views
+ * We can import all the different intervals of stocks e.g. every 1m between morning and now for 1d
+ * Every day between last month and now for 1mo etc
+ * Every week between last 5 years and now d
+ * Then we can useState for the different views
+ * If useState = 0 (represents 1mo for example)
+ * Then we display the graph for 1mo
+ * We store the intervals in an array [[[t1], [p1]], [[t2], [p2]]]
+ * Then access through historical[state][0] or [1]
+ */
 class Stock {
-    constructor(name, code, price, priceChange, type="stock") {
+    constructor(name, code, price, priceChange, historical, type="stock") {
         this.name = name;
         this.code = code;
         this.price = price;
         this.priceChange = priceChange;
+        this.historical = historical;
         this.type = type;
     }
 }
@@ -19,16 +31,19 @@ const filterValues = {
     number: "",
 }
 
-const stockArray = ["CBA.AX", "JIN.AX", "NHC.AX", "PLS.AX", "RIO.AX", "TLS.AX", "WES.AX", "WHC.AX", "WOW.AX", "YAL.AX", "^AXJO"];
+const stockArray = ["CBA.AX", "JIN.AX", "NHC.AX", "PLS.AX", "RIO.AX", "TLS.AX", "WES.AX", "WHC.AX", "WOW.AX", "YAL.AX", "^AXJO", "^AORD"];
 
 export async function getServerSideProps() {
     const data = [];
     for (let stock of stockArray) {
         const res = await yahooFinance.quoteSummary(stock);
+        const chart = await yahooFinance._chart(stock, { period1: Math.floor(new Date().setFullYear(new Date().getFullYear() - 1)/1000), interval: "1d"});
+        const historical = [chart.quotes.map(x => Math.floor(x.date / 1000)), chart.quotes.map(x => x.close)];
         const name = stock[0] === "^" ? res.price.shortName : res.price.longName;
+        const code = res.price.symbol;
         const price = res.price.regularMarketPrice;
         const change = res.price.regularMarketChange;
-        data.push([name, stock, price, change]);
+        data.push([name, code, price, change, historical]);
     }
     return {props: {data}};
 }
@@ -38,7 +53,7 @@ export default function Home({data}) {
 
     for (let i=0; i<data.length; i++) {
         const type = data[i][1][0] === "^" ? "index" : "stock";
-        stockList.push(new Stock(data[i][0], type === "stock" ? data[i][1].slice(0, 3) : data[i][1].slice(2, 5), data[i][2], data[i][3], type));
+        stockList.push(new Stock(data[i][0], type === "stock" ? data[i][1].slice(0, 3) : data[i][1].slice(2, 5), data[i][2], data[i][3], data[i][4], type));
     }
 
     const [filteredList, setFilteredList] = new useState(stockList);
@@ -150,7 +165,7 @@ export default function Home({data}) {
                     <div className="flex justify-center flex-col items-center">
                         {filteredList.length !== 0
                             ? filteredList.map((item, index) => (
-                                <Button collapse={[collapse, setCollapse]} key={index} index={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange}></Button>
+                                <Button collapse={[collapse, setCollapse]} key={index} index={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange} historical={item.historical}></Button>
                             ))
                             : <div className="button flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
                                 <div className="flex justify-center items-center bg-white px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
