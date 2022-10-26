@@ -38,13 +38,6 @@ export default function LineGraph(props) {
       legend: {
         display: false,
       },
-      tooltips: {
-        
-      },
-    },
-    interaction: {
-      intersect: false,
-      mode: "index",
     },
     elements: {
       line: {
