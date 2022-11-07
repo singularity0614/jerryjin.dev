@@ -31,13 +31,18 @@ const filterValues = {
     number: "",
 }
 
-const stockArray = ["CBA.AX", "JIN.AX", "NHC.AX", "PLS.AX", "RIO.AX", "TLS.AX", "WES.AX", "WHC.AX", "WOW.AX", "YAL.AX", "^AXJO", "^AORD"];
+/**
+ * Stock indices throw a failed validation error, need to fix later
+ */
+
+const stockArray = ["AIA", "ALL", "ALX", "AMC", "ANZ", "APA", "ASX", "BHP", "BXB", "CBA", "COH", "COL", "CPU", "CSL", "EDV", "FMG", "FPH", "GMG", "IAG", "IGO", "JHX", "MIN", "MQG", "NAB", "NCM", "NST", "ORG", "PLS", "QAN", "QBE", "REA", "REH", "RHC", "RIO", "RMD", "S32", "SCG", "SHL", "SOL", "STO", "SUN", "TCL", "TLS", "TPG", "WBC", "WDS", "WES", "WOW", "WTC", "XRO"];
 
 export async function getServerSideProps() {
     const data = [];
-    for (let stock of stockArray) {
+    for (let ticker of stockArray) {
+        const stock = `${ticker}.AX`;
         const res = await yahooFinance.quoteSummary(stock);
-        const chart = await yahooFinance._chart(stock, { period1: Math.floor(new Date().setFullYear(new Date().getFullYear() - 1)/1000), interval: "1d"});
+        const chart = await yahooFinance._chart(stock, { period1: Math.floor(new Date().setFullYear(new Date().getFullYear() - 1)/1000), period2: Math.floor(Date.now()/1000), interval: "1d"});
         const historical = [chart.quotes.map(x => Math.floor(x.date / 1000)), chart.quotes.map(x => x.close)];
         const name = stock[0] === "^" ? res.price.shortName : res.price.longName;
         const code = res.price.symbol;
@@ -85,9 +90,32 @@ export default function Home({data}) {
                 updatedList = updatedList.filter((item) => {
                     return item.price < parseFloat(num);
                 });
+            } else if (filterValues.select === "up") {
+                updatedList = updatedList.filter((item) => {
+                    for (let i=0; i<num; i++) {
+                        if (!(item.historical[1].at(-1-i) - item.historical[1].at(-2-i) > 0)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
             } else if (filterValues.select === "equal") {
                 updatedList = updatedList.filter((item) => {
-                    return item.price === parseFloat(num);
+                    for (let i=0; i<num; i++) {
+                        if (!(item.historical[1].at(-1-i) - item.historical[1].at(-2-i) === 0)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+            } else if (filterValues.select === "down") {
+                updatedList = updatedList.filter((item) => {
+                    for (let i=0; i<num; i++) {
+                        if (!(item.historical[1].at(-1-i) - item.historical[1].at(-2-i) < 0)) {
+                            return false;
+                        }
+                    }
+                    return true;
                 });
             }
         }
@@ -130,12 +158,14 @@ export default function Home({data}) {
                     <div className="flex justify-center items-center">
                         <div className="flex justify-between items-center w-[720px] xl:w-[50vw] m-4">
                             <div className="flex justify-center items-center">
-                                <label htmlFor="filter" className="px-1 flex">Filter:</label>
+                                <label htmlFor="filter" className="pr-1 flex">Filter:</label>
                                 <div id="filter" name="filter" className="flex justify-center items-center" onChange={filterByType}>
                                     <select name="select">
-                                        <option value="above" className="p-1">Above</option>
-                                        <option value="below" className="p-0.5">Below</option>
-                                        <option value="equal" className="p-0.5">Equal</option>
+                                        <option value="above">Above</option>
+                                        <option value="below">Below</option>
+                                        <option value="up">Up</option>
+                                        <option value="equal">Equal</option>
+                                        <option value="down">Down</option>
                                     </select>
                                     <input name="number" className="px-1 mx-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg w-20" onChange={filterByType} type="number"/>
                                 </div>
@@ -144,6 +174,11 @@ export default function Home({data}) {
                                 <label htmlFor="search" className="mx-2">Search:</label>
                                 <input id="search" name="search" className="px-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg" onChange={filterBySearch} />
                             </div>
+                        </div>
+                    </div>
+                    <div className="flex justify-center items-center border-solid border-t-[1px] pt-4 border-neutral-300">
+                        <div className="w-[720px] xl:w-[50vw] text-sm text-gray-500">
+                            Results: {filteredList.length}
                         </div>
                     </div>
                 </section>
