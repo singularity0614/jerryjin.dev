@@ -15,6 +15,20 @@ function StockDisplay(props) {
     const historical = props.historical;
     const summary = props.summary;
     
+    const convertNum = (num) => {
+        const units = ["", "K", "M", "B", "T"];
+        const unit = Math.floor((num.toString().length - 1) / 3);
+        const end = units[unit];
+        return `${(num/(10**(unit*3))).toFixed(2)}${end}`;
+    }
+    
+    for (let i=0; i<summary.length; i++) {
+
+        if (typeof summary[i] !== "string") {
+            summary[i] = i === 3 ? convertNum(summary[i]) : (i === 5 ? `${(summary[i]*100).toFixed(2)}%` : (i === 6 ? convertNum(summary[i]) : summary[i].toFixed(2)));
+        }
+    }
+    
     let arrow;
     
     if (priceChange > 0) {
@@ -45,7 +59,7 @@ function StockDisplay(props) {
                 <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
                     <div className="">
                         <div>{name}</div>
-                        <div className="text-sm text-slate-500">{code}</div>
+                        <div className="text-sm text-gray-500">{code}</div>
                     </div>
                     <div className="flex justify-end items-center font-medium">
                         <div className="flex justify-end items-center">
@@ -72,22 +86,79 @@ function StockDisplay(props) {
                             <StockGraph data={data} priceChange={priceChange}></StockGraph>
                         </div>
                     </div>
-                    <div className={`grid grid-rows-3 grid-flow-col gap-x-12 gap-y-4 ${collapse === `collapse${index}` ? "animate-fade-in" : "animate-fade-out"}`}>
-                        <div>
-                            <div>Open: {summary[0]}</div>
+                    <div className={`grid grid-rows-3 grid-flow-col gap-x-1 gap-y-1 ${collapse === `collapse${index}` ? "animate-fade-in" : "animate-fade-out"} pt-3 pb-2`}>
+                        <div className="flex justify-start items-center text-sm w-[180px]">
+                            <div className="flex justify-start items-center w-24">
+                                Open
+                            </div>
+                            <div className="flex justify-start items-center text-gray-500">
+                                {summary[0]}
+                            </div>
                         </div>
-                        <div>
-                            <div>High: {summary[1]}</div>
+                        <div className="flex justify-start items-center text-sm w-[180px]">
+                            <div className="flex justify-start items-center w-24">
+                                High
+                            </div>
+                            <div className="flex justify-start items-center text-gray-500">
+                                {summary[1]}
+                            </div>
                         </div>
-                        <div>
-                            <div>Low: {summary[2]}</div>
+                        <div className="flex justify-start items-center text-sm w-[180px]">
+                            <div className="flex justify-start items-center w-24">
+                                Low
+                            </div>
+                            <div className="flex justify-start items-center text-gray-500">
+                                {summary[2]}
+                            </div>
                         </div>
-                        <div>Mkt cap: {summary[3]}</div>
-                        <div>P/E ratio: {summary[4]}</div>
-                        <div>Div yield: {summary[5]}</div>
-                        <div>Volume: {summary[6]}</div>
-                        <div>52-wk high: {summary[7]}</div>
-                        <div>52-wk low: {summary[8]}</div>
+                        <div className="flex justify-start items-center text-sm w-[180px]">
+                            <div className="flex justify-start items-center w-24">
+                                Mkt cap
+                            </div>
+                            <div className="flex justify-start items-center text-gray-500">
+                                {summary[3]}
+                            </div>
+                        </div>
+                        <div className="flex justify-start items-center text-sm w-[180px]">
+                            <div className="flex justify-start items-center w-24">
+                                P/E ratio
+                            </div>
+                            <div className="flex justify-start items-center text-gray-500">
+                                {summary[4]}
+                            </div>
+                        </div>
+                        <div className="flex justify-start items-center text-sm w-[180px]">
+                            <div className="flex justify-start items-center w-24">
+                                Div yield
+                            </div>
+                            <div className="flex justify-start items-center text-gray-500">
+                                {summary[5]}
+                            </div>
+                        </div>
+                        <div className="flex justify-start items-center text-sm w-[180px]">
+                            <div className="flex justify-start items-center w-24">
+                                Volume
+                            </div>
+                            <div className="flex justify-start items-center text-gray-500">
+                                {summary[6]}
+                            </div>
+                        </div>
+                        <div className="flex justify-start items-center text-sm w-[180px]">
+                            <div className="flex justify-start items-center w-24">
+                                52-wk high
+                            </div>
+                            <div className="flex justify-start items-center text-gray-500">
+                                {summary[7]}
+                            </div>
+                        </div>
+                        <div className="flex justify-start items-center text-sm w-[180px]">
+                            <div className="flex justify-start items-center w-24">
+                                52-wk low
+                            </div>
+                            <div className="flex justify-start items-center text-gray-500">
+                                {summary[8]}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>        

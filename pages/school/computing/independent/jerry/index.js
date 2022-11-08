@@ -58,14 +58,14 @@ export async function getServerSideProps() {
         const price = res.price.regularMarketPrice;
         const change = res.price.regularMarketChange;
         const open = res.summaryDetail.open;
-        const high = res.summaryDetail.dayHigh | null;
-        const low = res.summaryDetail.dayLow | null;
-        const cap = res.summaryDetail.marketCap | null;
-        const pe = res.summaryDetail.forwardPE | null;
-        const div = res.summaryDetail.dividendYield | null;
-        const vol = res.summaryDetail.volume | null;
-        const yhigh = res.summaryDetail.fiftyTwoWeekHigh | null;
-        const ylow = res.summaryDetail.fiftyTwoWeekLow | null;
+        const high = res.summaryDetail.dayHigh;
+        const low = res.summaryDetail.dayLow;
+        const cap = res.summaryDetail.marketCap;
+        const pe = res.summaryDetail.trailingPE || "-";
+        const div = res.summaryDetail.dividendYield || "-";
+        const vol = res.summaryDetail.volume;
+        const yhigh = res.summaryDetail.fiftyTwoWeekHigh;
+        const ylow = res.summaryDetail.fiftyTwoWeekLow;
         data.push([name, code, price, change, historical, open, high, low, cap, pe, div, vol, yhigh, ylow]);
     }
     return {props: {data}};
