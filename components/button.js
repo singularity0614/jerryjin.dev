@@ -13,6 +13,7 @@ function StockDisplay(props) {
     const dollarSign = props.type === "stock" ? "$" : "";
     const index = props.index;
     const historical = props.historical;
+    const summary = props.summary;
     
     let arrow;
     
@@ -63,7 +64,7 @@ function StockDisplay(props) {
                 </div>
             </div>
             <div className={`expanded -z-10 ${collapse === `collapse${index}` ? "animate-slide-in-from-top" : "animate-slide-out-to-top"} flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]`}>
-                <div className="flex justify-between items-center bg-white px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
+                <div className="flex flex-col justify-center items-center bg-white px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
                     <div className={`${collapse === `collapse${index}` ? "animate-fade-in" : "animate-fade-out"} flex flex-col justify-center items-center`}>                            
                         {name}
                         <br/>
@@ -71,7 +72,23 @@ function StockDisplay(props) {
                             <StockGraph data={data} priceChange={priceChange}></StockGraph>
                         </div>
                     </div>
-                    <div>sus</div>
+                    <div className={`grid grid-rows-3 grid-flow-col gap-x-12 gap-y-4 ${collapse === `collapse${index}` ? "animate-fade-in" : "animate-fade-out"}`}>
+                        <div>
+                            <div>Open: {summary[0]}</div>
+                        </div>
+                        <div>
+                            <div>High: {summary[1]}</div>
+                        </div>
+                        <div>
+                            <div>Low: {summary[2]}</div>
+                        </div>
+                        <div>Mkt cap: {summary[3]}</div>
+                        <div>P/E ratio: {summary[4]}</div>
+                        <div>Div yield: {summary[5]}</div>
+                        <div>Volume: {summary[6]}</div>
+                        <div>52-wk high: {summary[7]}</div>
+                        <div>52-wk low: {summary[8]}</div>
+                    </div>
                 </div>
             </div>        
         </>

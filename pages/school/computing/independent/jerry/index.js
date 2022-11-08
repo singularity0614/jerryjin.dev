@@ -16,12 +16,21 @@ import yahooFinance from "yahoo-finance2";
  * Then access through historical[state][0] or [1]
  */
 class Stock {
-    constructor(name, code, price, priceChange, historical, type="stock") {
+    constructor(name, code, price, priceChange, historical, open, high, low, cap, pe, div, vol, yhigh, ylow, type="stock") {
         this.name = name;
         this.code = code;
         this.price = price;
         this.priceChange = priceChange;
         this.historical = historical;
+        this.open = open;
+        this.high = high;
+        this.low = low;
+        this.cap = cap;
+        this.pe = pe;
+        this.div = div;
+        this.vol = vol;
+        this.yhigh = yhigh;
+        this.ylow = ylow;
         this.type = type;
     }
 }
@@ -48,7 +57,16 @@ export async function getServerSideProps() {
         const code = res.price.symbol;
         const price = res.price.regularMarketPrice;
         const change = res.price.regularMarketChange;
-        data.push([name, code, price, change, historical]);
+        const open = res.summaryDetail.open;
+        const high = res.summaryDetail.dayHigh | null;
+        const low = res.summaryDetail.dayLow | null;
+        const cap = res.summaryDetail.marketCap | null;
+        const pe = res.summaryDetail.forwardPE | null;
+        const div = res.summaryDetail.dividendYield | null;
+        const vol = res.summaryDetail.volume | null;
+        const yhigh = res.summaryDetail.fiftyTwoWeekHigh | null;
+        const ylow = res.summaryDetail.fiftyTwoWeekLow | null;
+        data.push([name, code, price, change, historical, open, high, low, cap, pe, div, vol, yhigh, ylow]);
     }
     return {props: {data}};
 }
@@ -58,7 +76,7 @@ export default function Home({data}) {
 
     for (let i=0; i<data.length; i++) {
         const type = data[i][1][0] === "^" ? "index" : "stock";
-        stockList.push(new Stock(data[i][0], type === "stock" ? data[i][1].slice(0, 3) : data[i][1].slice(2, 5), data[i][2], data[i][3], data[i][4], type));
+        stockList.push(new Stock(data[i][0], type === "stock" ? data[i][1].slice(0, 3) : data[i][1].slice(2, 5), data[i][2], data[i][3], data[i][4], data[i][5], data[i][6], data[i][7], data[i][8], data[i][9], data[i][10], data[i][11], data[i][12], data[i][13], type));
     }
 
     const [filteredList, setFilteredList] = new useState(stockList);
@@ -200,7 +218,7 @@ export default function Home({data}) {
                     <div className="flex justify-center flex-col items-center">
                         {filteredList.length !== 0
                             ? filteredList.map((item, index) => (
-                                <Button collapse={[collapse, setCollapse]} key={index} index={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange} historical={item.historical}></Button>
+                                <Button collapse={[collapse, setCollapse]} key={index} index={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange} historical={item.historical} summary={[item.open, item.high, item.low, item.cap, item.pe, item.div, item.vol, item.yhigh, item.ylow]}></Button>
                             ))
                             : <div className="button flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
                                 <div className="flex justify-center items-center bg-white px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-neutral-100 hover:cursor-pointer">
