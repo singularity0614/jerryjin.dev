@@ -99,6 +99,11 @@ export default function Home({data}) {
         };
         let updatedList = [...stockList];
         let num = filterValues.number;
+        let today = new Date();
+        let date = 0;
+        if (today.getDay() === 0 || today.getDay() === 6) {
+            date = 1;
+        }
         if (num !== "") {
             if (filterValues.select === "above") {
                 updatedList = updatedList.filter((item) => {
@@ -110,8 +115,8 @@ export default function Home({data}) {
                 });
             } else if (filterValues.select === "up") {
                 updatedList = updatedList.filter((item) => {
-                    for (let i=0; i<num; i++) {
-                        if (!(item.historical[1].at(-1-i) - item.historical[1].at(-2-i) > 0)) {
+                    for (let i=0; i<parseInt(num); i++) {
+                        if (!(item.historical[1].at(-1-i-date) - item.historical[1].at(-2-i-date) > 0)) {
                             return false;
                         }
                     }
@@ -119,8 +124,8 @@ export default function Home({data}) {
                 });
             } else if (filterValues.select === "equal") {
                 updatedList = updatedList.filter((item) => {
-                    for (let i=0; i<num; i++) {
-                        if (!(item.historical[1].at(-1-i) - item.historical[1].at(-2-i) === 0)) {
+                    for (let i=0; parseInt(num); i++) {
+                        if (!(item.historical[1].at(-1-i-date) - item.historical[1].at(-2-i-date) === 0)) {
                             return false;
                         }
                     }
@@ -128,8 +133,8 @@ export default function Home({data}) {
                 });
             } else if (filterValues.select === "down") {
                 updatedList = updatedList.filter((item) => {
-                    for (let i=0; i<num; i++) {
-                        if (!(item.historical[1].at(-1-i) - item.historical[1].at(-2-i) < 0)) {
+                    for (let i=0; i<parseInt(num); i++) {
+                        if (!(item.historical[1].at(-1-i-date) - item.historical[1].at(-2-i-date) < 0)) {
                             return false;
                         }
                     }
@@ -185,7 +190,7 @@ export default function Home({data}) {
                                         <option value="equal">Equal</option>
                                         <option value="down">Down</option>
                                     </select>
-                                    <input name="number" className="px-1 mx-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg w-20" onChange={filterByType} type="number"/>
+                                    <input name="number" className="px-1 mx-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg w-20" onChange={filterByType} type="number" min={0}/>
                                 </div>
                             </div>
                             <div className="flex justify-center items-center">
