@@ -29,7 +29,7 @@ import 'chartjs-adapter-moment';
 export default function LineGraph(props) {
   let data = props.data;
   let dataSet = data.datasets[0].data;
-  let change = dataSet[dataSet.length - 1].y - dataSet[0].y;
+  let change = dataSet.at(-1).y - dataSet[0].y;
   let lineColour = change > 0 ? "#137333" : (change < 0 ? "#a50e0e" : "#3c4043");
   let gColour0 = change > 0 ? "rgba(19, 115, 51, 0.38)" : (change < 0 ? "rgba(165, 14, 14, 0.38)" : "rgba(60, 64, 67, 0.38)");
   
