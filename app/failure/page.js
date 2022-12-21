@@ -1,7 +1,6 @@
-import Head from "next/head";
-import { useState, useEffect } from "react";
-import Button from "../../../../../components/button";
-import Gradient from "../../../../../components/gradientHeader";
+import { useState } from "react";
+import Button from "./button";
+import Gradient from "./gradientHeader";
 import yahooFinance from "yahoo-finance2";
 
 /**
@@ -35,7 +34,7 @@ class Stock {
     }
 }
 
-const filterValues = {
+let filterValues = {
     select: "above",
     number: "",
 }
@@ -46,7 +45,14 @@ const filterValues = {
 
 const stockArray = ["AIA", "ALL", "ALX", "AMC", "ANZ", "APA", "ASX", "BHP", "BXB", "CBA", "COH", "COL", "CPU", "CSL", "EDV", "FMG", "FPH", "GMG", "IAG", "IGO", "JHX", "MIN", "MQG", "NAB", "NCM", "NST", "ORG", "PLS", "QAN", "QBE", "REA", "REH", "RHC", "RIO", "RMD", "S32", "SCG", "SHL", "SOL", "STO", "SUN", "TCL", "TLS", "TPG", "WBC", "WDS", "WES", "WOW", "WTC", "XRO"];
 
-export async function getServerSideProps() {
+export const dynamic = 'force-dynamic',
+    dynamicParams = true,
+    revalidate = 0,
+    fetchCache = 'force-no-store',
+    runtime = 'nodejs',
+    preferredRegion = 'auto'
+
+async function getStocks() {
     const data = [];
     for (let ticker of stockArray) {
         const stock = `${ticker}.AX`;
@@ -68,10 +74,12 @@ export async function getServerSideProps() {
         const ylow = res.summaryDetail.fiftyTwoWeekLow;
         data.push([name, code, price, change, historical, open, high, low, cap, pe, div, vol, yhigh, ylow]);
     }
-    return {props: {data}};
+    return data;
 }
 
-export default function Home({data}) {
+export default async function Home() {
+    const data = await getStocks();
+
     const stockList = [];
 
     for (let i=0; i<data.length; i++) {
@@ -149,11 +157,7 @@ export default function Home({data}) {
     const [collapse, setCollapse] = new useState("collapsenone");
 
     return (
-        <>
-            <Head>
-                <title>Stock Dashboard</title>
-                <meta name="description" content="Independent Project - Stock Dashboard Website" />
-            </Head>      
+        <> 
             <main className="font-sans relative">
                 <Gradient className="absolute block -z-20 top-0 left-0"></Gradient>
                 <header className="absolute top-0 left-0 right-0">

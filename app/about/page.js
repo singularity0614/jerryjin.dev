@@ -1,15 +1,8 @@
-import Head from "next/head";
-
 export default function AboutMe() {
     
 
     return (
         <>
-            <Head>
-                <title>About Me - Jerry Jin</title>
-                <meta name="description" content="Hi I am Jerry. This site will guide you through my interests in maths and other things. Enjoy!"/>
-                {/*<script type="text/javascript" src="/scripts/distanceBar.js"></script>*/}
-            </Head>
             <main className="font-sans bg-[#F8FAFC] text-[#222222] flex flex-col justify-center">
                 <div className="bg-gray-200 h-3 sticky top-0">
                     <div className="distance-bar h-full bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] transition-all ease-out"></div>

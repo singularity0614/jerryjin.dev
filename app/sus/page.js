@@ -1,12 +1,6 @@
-import Head from "next/head";
-
 export default function HomePage() {
     return (
         <>
-            <Head>
-                <title>Jerry Jin</title>
-                <meta name="description" content="Hi I am Jerry. This site will guide you through my interests in maths and other things. Enjoy!"/>
-            </Head>
             <main className="font-sans bg-[#F8FAFC] dark:bg-slate-700 text-[#222222] dark:text-[#F8FAFC]">
                 <div className="h-screen flex flex-col justify-center items-center">
                     <button id="theme-toggle" type="button" className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 absolute top-2 right-3">
@@ -25,8 +19,8 @@ export default function HomePage() {
                             <a href="#" className="anim-delay-700 text-white bg-gradient-to-r from-[#92C9F9] to-[#C7F8FF] border-neutral-500 hover:border-neutral-700 px-3 py-2 rounded-2xl inline-block items-center m-1 text-2xl md:text-3xl border transition">Email</a>
                         </div>
                     </div>
-                    <div onclick="nextPage()" className="hover:cursor-pointer animate-bounce bg-white p-2 w-12 h-12 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center absolute bottom-4">
-                        <svg className="w-6 h-6 text-teal-300" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <div /*onClick="nextPage()"*/ className="hover:cursor-pointer animate-bounce bg-white p-2 w-12 h-12 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center absolute bottom-4">
+                        <svg className="w-6 h-6 text-teal-300" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                             <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                         </svg>
                     </div>

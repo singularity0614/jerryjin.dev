@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../app/globals.css';
 import Head from 'next/head';
 import favicon from '../public/favicon-128x128.png';
 

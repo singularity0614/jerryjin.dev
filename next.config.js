@@ -11,6 +11,7 @@ const nextConfig = {
   },
   experimental: {
     urlImports: ['https://gist.githack.com/jordienr/'],
+    appDir: true,
   },
 }
 
