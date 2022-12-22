@@ -4,9 +4,6 @@ export default function AboutMe() {
     return (
         <>
             <main className="font-sans bg-[#F8FAFC] text-[#222222] flex flex-col justify-center">
-                <div className="bg-gray-200 h-3 sticky top-0">
-                    <div className="distance-bar h-full bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] transition-all ease-out"></div>
-                </div>
                 <div className="flex justify-center mt-[10vw] xl:mt-32">
                     <div className="w-[384px] md:w-[50vw] xl:w-[640px]">
                         <p className="text-xs text-gray-500 font-medium pl-[5px] mb-3">ABOUT ME</p>
