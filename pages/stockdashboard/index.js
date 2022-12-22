@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
-import Button from "../../app/failure/button";
-import Gradient from "../../app/failure/gradientHeader";
+import Button from "../../failure/button";
+import Gradient from "../../failure/gradientHeader";
 import yahooFinance from "yahoo-finance2";
 
 /**
