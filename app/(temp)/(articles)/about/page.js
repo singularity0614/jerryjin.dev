@@ -3,7 +3,7 @@ export default function AboutMe() {
 
     return (
         <>
-            <main className="font-sans bg-[#F8FAFC] text-[#222222] flex flex-col justify-center">
+            <main className="text-[#222222] flex flex-col justify-center">
                 <div className="flex justify-center mt-[10vw] xl:mt-32">
                     <div className="w-[384px] md:w-[50vw] xl:w-[640px]">
                         <p className="text-xs text-gray-500 font-medium pl-[5px] mb-3">ABOUT ME</p>

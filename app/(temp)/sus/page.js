@@ -12,7 +12,7 @@ export default function HomePage() {
 
     return (
         <>
-            <main className="font-sans bg-[#F8FAFC] dark:bg-slate-700 text-[#222222] dark:text-[#F8FAFC]">
+            <main className="dark:bg-slate-700 text-[#222222] dark:text-[#F8FAFC]">
                 <section>
                     <div className="h-screen flex flex-col justify-center items-center">
                         <button id="theme-toggle" type="button" className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 absolute top-2 right-3">
