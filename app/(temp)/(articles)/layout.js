@@ -1,6 +1,6 @@
 import DistanceBar from "./DistanceBar";
 
-export default function RootLayout({ children }) {
+export default function AricleLayout({ children }) {
     return (
         <>
             <DistanceBar />

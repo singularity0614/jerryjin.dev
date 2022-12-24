@@ -1,6 +1,6 @@
 import Header from "./Header";
 
-export default function RootLayout({ children }) {
+export default function TempLayout({ children }) {
     return (
         <>
             <Header />

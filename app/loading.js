@@ -1,3 +1,3 @@
 export default function Loading() {
-    return "Fetching stocks..."
+    return "Loading... Please wait"
 }

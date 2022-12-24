@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["media.digistormhosting.com.au"],
+    domains: ["media.digistormhosting.com.au", "i.pinimg.com"],
   },
   i18n: {
     locales: ["en"],
