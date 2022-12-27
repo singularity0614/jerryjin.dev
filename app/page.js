@@ -64,7 +64,7 @@ export default function HomePage() {
                     </div>
 </section>*/}
                 <section>
-                    <div className="p-32">
+                    <div ref={scrollToRef} className="p-32">
                         <div className="flex justify-center items-center">
                             <div className="w-[480px] m-8">
                                 <h1 className="text-5xl font-semibold">Skills</h1>
