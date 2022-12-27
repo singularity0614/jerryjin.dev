@@ -3,8 +3,8 @@ import favicon from '../public/favicon-128x128.png';
 export default function Head() {
     return (
         <>            
-            <title>Working In Progress</title>
-            <meta name="description" content="Come back later for more!" />
+            <title>Jerry Jin</title>
+            <meta name="description" content="The website concerning the overlord, Jerry Jin."/>
             <meta charSet="UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <link rel="stylesheet" precedence="default" href="https://use.typekit.net/usx0uee.css" />

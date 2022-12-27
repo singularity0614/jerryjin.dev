@@ -5,7 +5,7 @@ export default function About() {
         <>
             <main className="text-[#222222] flex flex-col justify-center">
                 <div className="flex justify-center mt-[10vw] xl:mt-32">
-                    <div className="w-[640px]">
+                    <div className="w-full sm:w-[640px] m-2">
                         <p className="text-xs text-gray-500 font-medium pl-[5px] mb-3">ABOUT ME</p>
                         <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
                         <h2 className="animate-fade-in-from-bottom del font-semibold text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#049CB7] to-[#3DD9BD]">about me</h2>
