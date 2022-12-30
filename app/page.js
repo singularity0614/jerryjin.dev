@@ -64,7 +64,7 @@ export default function HomePage() {
                     </div>
 </section>*/}
                 <section>
-                    <div ref={scrollToRef} className="p-32">
+                    <div ref={scrollToRef} className="py-32">
                         <div className="flex justify-center items-center">
                             <div className="w-[480px] m-8">
                                 <h1 className="text-5xl font-semibold">Skills</h1>
@@ -112,7 +112,7 @@ function Latest(props) {
     return (
         <>
             <div className="border-b-slate-200 border-b pb-6">
-                <p className="text-lg text-[#444444]"><Link href={props.route}>{props.title}</Link></p>
+                <p className="text-lg"><Link href={props.route}>{props.title}</Link></p>
             </div>
         </>
     )
