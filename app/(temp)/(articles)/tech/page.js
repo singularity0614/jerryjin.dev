@@ -8,7 +8,7 @@ export default function Tech() {
                     <div className="w-full sm:w-[640px] m-2">
                         <p className="text-xs text-gray-500 font-medium pl-[5px] mb-3">TECH</p>
                         <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
-                        <h2 className="animate-fade-in-from-bottom del font-semibold text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#049CB7] to-[#3DD9BD]">tech</h2>
+                        <h2 className="animate-fade-in-from-bottom del font-semibold text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] w-fit">tech</h2>
                         <img className="show-on-scroll animate-fade-in-from-bottom rounded-xl my-16" alt="CGS" src="https://www.apple.com/v/mac-mini/q/images/overview/hero__x8ruukomx2au_large_2x.jpg"/>
                         <p className="text-lg mb-6">As a student living in the digital age, tech is something I've entrenched myself into. Below are some of the digital products I use.</p>
                         <h3 className="text-2xl font-semibold mb-6">The Stuff I Use</h3>
@@ -44,24 +44,6 @@ export default function Tech() {
                         <p className="text-lg mb-6">Nowadays, because I don't need to dock it, I use it at school for more intensive desktop tasks such as game development. However, because of its slow startup, loud fans and poor battery, it does prove to be an inconvenience at times, which is why I'm considering upgrading to an Apple Silicon Mac.</p>
                         <p className="text-lg mb-6">Being the only device I own not integrated in the Apple ecosystem does make it slightly unused at home, another reason why I'm considering switching from Windows to Mac.</p>
                         <p className="text-md mb-6 font-light"><em>Memory: 32GB, Storage: 1TB</em></p>
-                        {/*<ol className="text-lg list-decimal list-inside mb-6">
-                            <li className="mb-1">I am currently a Year 11 student studying at <CustomLink href="https://cgs.vic.edu.au" text="Camberwell Grammar School" />.</li>
-                            <li className="mb-1">On <CustomLink href="/" text="this website" />, I showcase myself as well as some other projects, including this <CustomLink href="/stockdashboard" text="stock dashboard" />.</li>
-                            <li className="mb-1">I also try to invest in stocks, so if you have any advice, feel free to share it 😊</li>
-                        </ol>
-                        <p className="text-lg mb-6">However, I feel like I should probably be looking for a job or maybe even starting a small business to earn some money at this age.</p>
-                        <h3 className="text-2xl font-semibold mb-6">VCE</h3>
-                        <p className="text-lg mb-2">For reference, my VCE subjects are:</p>
-                        <ul className="text-lg list-disc list-inside mb-6">
-                            <li className="mb-1 pl-1">English Language</li>
-                            <li className="mb-1 pl-1">Mathematical Methods</li>
-                            <li className="mb-1 pl-1">Specialist Mathematics</li>
-                            <li className="mb-1 pl-1">Chinese Second Language</li>
-                            <li className="mb-1 pl-1">Chemistry</li>
-                            <li className="mb-1 pl-1">Physics</li>
-                        </ul>
-                        <h3 className="text-2xl font-semibold mb-6">Other Stuff</h3>
-    <p className="text-lg mb-6">not much other than...</p>*/}
                     </div>
                 </div>
             </main>

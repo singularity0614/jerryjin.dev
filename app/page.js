@@ -16,9 +16,9 @@ export default function HomePage() {
             <main className="dark:bg-slate-700 text-[#222222] dark:text-[#F8FAFC]">
                 <section>
                     <div className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] text-white">
-                        <h1 className="font-semibold text-2xl absolute left-20 top-8">Jerry Jin</h1>
+                        <h1 className="hidden sm:block font-semibold text-2xl absolute left-20 top-8">Jerry Jin</h1>
                         <h1 className="font-semibold text-9xl">hi.</h1>
-                        <div className="font-semibold text-md absolute right-20 top-8 text-center">
+                        <div className="hidden sm:block font-semibold text-md absolute right-20 top-8 text-center">
                             <div className="mb-24"><Link href="/about">about</Link></div>
                             <div className="mb-8 flex justify-center">
                                 <a href="https://www.instagram.com/j.j.in_/" target="_blank" rel="noopener noreferrer" aria-label="instagram">
@@ -40,18 +40,18 @@ export default function HomePage() {
                     </div>
                 </section>
                 <section>
-                    <div ref={scrollToRef} className="py-32">
-                        <div className="flex justify-center items-center">
-                            <div className="w-[480px] m-8">
+                    <div ref={scrollToRef} className="sm:py-32">
+                        <div className="sm:flex sm:justify-center sm:items-center">
+                            <div className="sm:w-[480px] mx-4 sm:mx-8 py-16 sm:py-8">
                                 <h1 className="text-5xl font-semibold">Skills</h1>
                                 <hr className="w-[80px] border-2 border-[#049CB7] mt-4 mb-8 rounded-sm" />
-                                <div className="h-96 flex flex-col justify-between">
+                                <div className="sm:h-96 sm:flex sm:flex-col sm:justify-between">
                                     <Skill emoji="➗" title="Maths" description="An interesting subject which I have always been passionate about." />
                                     <Skill emoji="👨🏻‍💻" title="Coding" description="Recently started learning, I wish to continue with this and develop more skills." />
                                     <Skill emoji="🧬" title="Science" description="Although not above average in terms of grades, I am still curious about the way the world works." />
                                 </div>
                             </div>
-                            <div className="w-[480px] m-8">
+                            <div className="sm:w-[480px] mx-4 sm:mx-8 pb-16 sm:py-8">
                                 <h1 className="text-5xl font-semibold">Latest</h1>
                                 <hr className="w-[80px] border-2 border-[#3DD9BD] mt-4 mb-8 rounded-sm" />
                                 <div className="h-96 flex flex-col justify-between">
@@ -73,7 +73,7 @@ export default function HomePage() {
 function Skill(props) {
     return (
         <>
-            <div className="flex justify-between items-center p-3 bg-slate-100 rounded-lg hover:cursor-pointer">
+            <div className="flex justify-between items-center p-3 my-3 sm:my-0 bg-slate-100 rounded-lg hover:cursor-pointer">
                 <div className="text-3xl mx-3">{props.emoji}</div>
                 <div className="ml-1 my-3">
                     <p className="text-xl font-semibold mb-0.25">{props.title}</p>

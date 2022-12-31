@@ -14,8 +14,16 @@ export default function Header() {
                         <PageLink link="/stockdashboard" title="stocks" />
                         <PageLink link="/tech" title="tech" />
                     </div>
-                    <div className="sm:hidden h-[5vh] sm:h-16 w-[5vh] sm:w-16 relative">
-                        <Image src={menu.src} alt="Menu" fill={true} />
+                    <div className="group sm:hidden h-[3vh] sm:h-16 w-[3vh] sm:w-16 relative hover:cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="fill-gray-500"><path d="M8 14h7a1 1 0 000-2H8a1 1 0 000 2zM1 4h14a1 1 0 000-2H1a1 1 0 000 2zM1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path></svg>
+                        {/*<Image src={menu.src} alt="Menu" fill={true} />*/}
+                        <div className="group-hover:block hidden absolute right-0 top-[3vh] z-10 text-md text-gray-500">
+                            <div className="flex flex-col justify-center drop-shadow-lg bg-[#F8FAFC] rounded-lg p-4 mt-0.5 w-fit">
+                                <Link href="/about"><p className="text-right">about</p></Link>
+                                <Link href="/stockdashboard"><p className="text-right">stocks</p></Link>
+                                <Link href="/tech"><p className="text-right">tech</p></Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
