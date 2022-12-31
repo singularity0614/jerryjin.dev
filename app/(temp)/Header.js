@@ -12,6 +12,7 @@ export default function Header() {
                     <div className="text-gray-500 text-md sm:flex sm:justify-end hidden">
                         <PageLink link="/about" title="about" />
                         <PageLink link="/stockdashboard" title="stocks" />
+                        <PageLink link="/tech" title="tech" />
                     </div>
                     <div className="sm:hidden h-[5vh] sm:h-16 w-[5vh] sm:w-16 relative">
                         <Image src={menu.src} alt="Menu" fill={true} />
