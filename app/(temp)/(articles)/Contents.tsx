@@ -1,8 +1,8 @@
 'use client'
 
 export default function Contents(props) {
-    const goToContent = (n) => {
-        props.headings[n][1].current !== undefined ? props.headings[n][1].current.scrollIntoView({behavior: "smooth", block: "start", inline: "start"}) : console.log("undefined");
+    const goToContent = (n: number) => {
+        props.headings[n][1].current !== undefined ? props.headings[n][1].current.scrollIntoView({behavior: "smooth", block: "start", inline: "start"}) : null;
     }
 
     return (

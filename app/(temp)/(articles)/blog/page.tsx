@@ -1,29 +1,20 @@
 import { Title } from "../../../Formats";
 import Link from "next/link";
+import { getSortedPostsData } from "./posts";
 
-class Post {
-    constructor(title, date) {
-        this.title = title;
-        this.slug = title.toLowerCase().split(" ").join("-");
-        this.date = date;
-    }
+async function getData() {
+    return getSortedPostsData();
 }
 
-export const Posts = [
-    new Post("Our habits are inevitable", "03/01/23"),
-    new Post("Something else", "07/01/23"),
-    new Post("Something else", "07/01/23"),
-    new Post("Something else", "07/01/23"),
-]
-
-export default function Page() {
+export default async function Page() {
+    const postsData = await getData();
 
     return (
         <> 
             <Title title="blog" image={false} /> 
             <ul className="pt-6">
                 {
-                    Posts.map((x, index) => (
+                    postsData.map((x, index) => (
                         <BlogPost key={index} post={x} />
                     ))
                 }   
@@ -38,7 +29,7 @@ function BlogPost(props) {
     return (
         <li className="odd:bg-slate-100 rounded-xl">
             <div className="flex justify-between items-center p-6">
-                <p className="font-medium"><Link href={`/blog/${post.slug}`}>{post.title}</Link></p>
+                <p className="font-medium"><Link href={`/blog/${post.id}`}>{post.title}</Link></p>
                 <p className="text-sm text-gray-500">{post.date}</p>
             </div>
         </li>

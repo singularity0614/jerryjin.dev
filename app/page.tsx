@@ -5,10 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function HomePage() {
-    const scrollToRef = useRef();
+    const scrollToRef = useRef<HTMLDivElement>();
 
     const nextPage = () => {
-        scrollToRef.current.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+        scrollToRef.current !== undefined ? scrollToRef.current.scrollIntoView({behavior: "smooth", block: "start", inline: "start"}) : null;
     }
 
     return (
