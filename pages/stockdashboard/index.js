@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import Button from "../../components/failure/button";
-import Gradient from "../../components/failure/gradientHeader";
+//import Gradient from "../../components/failure/gradientHeader";
 import yahooFinance from "yahoo-finance2";
 
 /**
@@ -155,7 +155,7 @@ export default function Home({data}) {
                 <meta name="description" content="Independent Project - Stock Dashboard Website" />
             </Head>      
             <main className="font-sans relative">
-                <Gradient className="absolute block -z-20 top-0 left-0"></Gradient>
+                {/*<Gradient className="absolute block -z-20 top-0 left-0"></Gradient>*/}
                 <header className="absolute top-0 left-0 right-0">
                     <div className="flex justify-center mt-64 mb-16">
                         <div className="w-[384px] md:w-[50vw] xl:w-[640px]">

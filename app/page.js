@@ -31,7 +31,7 @@ export default function HomePage() {
                                 </a>
                             </div>
                         </div>
-                        <div onClick={nextPage} className="hover:cursor-pointer animate-bounce bg-white p-2 w-12 h-12 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center absolute bottom-4">
+                        <div onClick={nextPage} className="hover:cursor-pointer animate-bounce bg-[#F8FAFC] p-2 w-12 h-12 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center absolute bottom-4">
                             <svg className="w-6 h-6 text-[#3DD9BD]" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                             </svg>
@@ -58,7 +58,7 @@ export default function HomePage() {
                                     <Latest title="About" route="/about" />
                                     <Latest title="Intern" route="/" />
                                     <Latest title="Tech" route="/tech" />
-                                    <Latest title="Plans" route="/" />
+                                    <Latest title="Blog" route="/blog" />
                                     <Latest title="Stocks" route="/stockdashboard" />
                                 </div>
                             </div>

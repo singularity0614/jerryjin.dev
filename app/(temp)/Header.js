@@ -13,6 +13,7 @@ export default function Header() {
                         <PageLink link="/about" title="about" />
                         <PageLink link="/stockdashboard" title="stocks" />
                         <PageLink link="/tech" title="tech" />
+                        <PageLink link="/blog" title="blog" />
                     </div>
                     <div className="group sm:hidden h-[3vh] sm:h-16 w-[3vh] sm:w-16 relative hover:cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" className="fill-gray-500 h-[3vh] w-[3vh]"><path d="M8 14h7a1 1 0 000-2H8a1 1 0 000 2zM1 4h14a1 1 0 000-2H1a1 1 0 000 2zM1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path></svg>
@@ -21,6 +22,7 @@ export default function Header() {
                                 <Link href="/about"><p className="text-right">about</p></Link>
                                 <Link href="/stockdashboard"><p className="text-right">stocks</p></Link>
                                 <Link href="/tech"><p className="text-right">tech</p></Link>
+                                <Link href="/blog"><p className="text-right">blog</p></Link>
                             </div>
                         </div>
                     </div>
