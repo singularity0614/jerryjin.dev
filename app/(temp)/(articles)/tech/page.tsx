@@ -1,9 +1,8 @@
 'use client'
 
-import CustomLink from "../../../CustomLink"
 import { useRef } from "react";
 import Contents from "../Contents";
-import { Title, Heading3, Heading4 } from "../../../Formats";
+import { Title, Heading3, Heading4, Paragraph, CustomLink } from "../../../Formats";
 
 export default function Tech() {
     const headings = ["The Stuff I Use", "📱 iPhone", "⌚ Apple Watch", "📝 iPad", "🖥️ Mac", "💻 Laptop", "🎧 Audio", "⌨️ Desk peripherals"].map(x => [x, useRef()]);

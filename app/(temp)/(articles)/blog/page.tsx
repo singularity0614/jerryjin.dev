@@ -12,7 +12,7 @@ export default async function Page() {
     return (
         <> 
             <Title title="blog" image={false} /> 
-            <ul className="pt-6">
+            <ul className="py-16">
                 {
                     postsData.map((x, index) => (
                         <BlogPost key={index} post={x} />

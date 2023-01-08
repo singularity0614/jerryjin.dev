@@ -15,9 +15,9 @@ module.exports = {
       fontFamily: {
         'proximanova': ['proxima-nova', 'sans-serif'],
         sans: [
+          'proxima-nova',
           '-apple-system',
           'BlinkMacSystemFont',
-          'proxima-nova',
           '"Segoe UI"',
           'Roboto',
           '"Helvetica Neue"',

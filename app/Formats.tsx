@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Title(props) {
     return (
         <>
@@ -25,4 +27,16 @@ export function Heading4(props) {
             <h4 ref={props.array[1]} className="text-xl font-medium mb-6 pt-4">{props.array[0]}</h4>
         </>
     )
+}
+
+export function Paragraph({ children }) {
+    return (
+        <>
+            <p className="text-lg mb-6">{children}</p>
+        </>
+    )
+}
+
+export function CustomLink({href, children}) {
+    return href[0] === "/" ? <Link href={href} className="underline text-[#049CB7]">{children}</Link> : <a href={href} target="_blank" rel="noopener noreferrer" className="underline text-[#049CB7]">{children}</a>;
 }

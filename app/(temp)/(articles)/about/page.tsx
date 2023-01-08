@@ -1,8 +1,7 @@
 'use client'
 
-import CustomLink from "../../../CustomLink";
 import { useState, useRef } from "react";
-import { Heading3 } from "../../../Formats";
+import { Heading3, CustomLink } from "../../../Formats";
 import Contents from "../Contents";
 
 export default function About() {
@@ -19,8 +18,8 @@ export default function About() {
             <p className="text-lg mb-6">As of 2023, I am a student in Year 11, enroute to finishing my high school journey, with the largest obstacle — VCE — still in the way.</p>
             <Heading3 array={headings[0]} />
             <ol className="text-lg list-decimal list-inside mb-6">
-                <li className="mb-1">I am currently a Year 11 student studying at <CustomLink href="https://cgs.vic.edu.au" text="Camberwell Grammar School" />.</li>
-                <li className="mb-1">On <CustomLink href="/" text="this website" />, I showcase myself as well as some other projects, including this <CustomLink href="/stockdashboard" text="stock dashboard" />.</li>
+                <li className="mb-1">I am currently a Year 11 student studying at <CustomLink href="https://cgs.vic.edu.au">Camberwell Grammar School</CustomLink>.</li>
+                <li className="mb-1">On <CustomLink href="/">this website</CustomLink>, I showcase myself as well as some other projects, including this <CustomLink href="/stockdashboard">stock dashboard</CustomLink>.</li>
                 <li className="mb-1">I also try to invest in stocks, so if you have any advice, feel free to share it 😊</li>
             </ol>
             <p className="text-lg mb-6">However, I feel like I should probably be looking for a job or maybe even starting a small business to earn some money at this age.</p>

@@ -2,10 +2,12 @@
 title: 'Our habits are inevitable'
 date: '03/01/2023'
 ---
+### Fined $280
 
-Next.js has two forms of pre-rendering: **Static Generation** and **Server-side Rendering**. The difference is in **when** it generates the HTML for a page.
+This is a custom link <CustomLink href="https://apple.com/au/">to apple</CustomLink> and it is very cool
 
-- **Static Generation** is the pre-rendering method that generates the HTML at **build time**. The pre-rendered HTML is then _reused_ on each request.
-- **Server-side Rendering** is the pre-rendering method that generates the HTML on **each request**.
+This is a different custom link <CustomLink href="https://google.com">to google</CustomLink>, but it hasn't changed anything
 
-Importantly, Next.js lets you **choose** which pre-rendering form to use for each page. You can create a "hybrid" Next.js app by using Static Generation for most pages and using Server-side Rendering for others.
+Write whatever I want
+
+What will this render?

@@ -1,7 +1,17 @@
-export default function Head() {
+import { getPostData } from "../posts";
+
+async function getPost(params) {
+    const post = getPostData(params.id);
+
+    return post;
+}
+
+export default async function Head({ params }) {
+    const postData = await getPost(params);
+
     return (
         <>
-            <title>Blog post</title>
+            <title>{`${postData.data.title} - Jerry Jin`}</title>
         </>
     )
 }
