@@ -4,7 +4,7 @@
 
 This is a project to create a website for myself.
 
-[Link to the website.](www.jerryjin.dev) 
+[Link to the website](www.jerryjin.dev) 
 
 ### Independent Project
 
@@ -19,4 +19,4 @@ Hopefully I can monetise it.
 
 ### Credits
 
-Built with [NextJS](www.nextjs.org) and hosted with [Google Cloud](cloud.google.com).
+Built with [NextJS](www.nextjs.org) and hosted with [Google Cloud](www.cloud.google.com).
