@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Footer from "./Footer";
 
 export default function HomePage() {
     const scrollToRef = useRef<HTMLDivElement>();
@@ -65,6 +66,7 @@ export default function HomePage() {
                     </div>
                 </section>
             </main>
+            <Footer />
         </>
     );
 }

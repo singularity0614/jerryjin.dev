@@ -18,6 +18,7 @@ module.exports = {
           'proxima-nova',
           '-apple-system',
           'BlinkMacSystemFont',
+          'var(--font-inter)',
           '"Segoe UI"',
           'Roboto',
           '"Helvetica Neue"',

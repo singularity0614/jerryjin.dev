@@ -7,6 +7,7 @@ const nextConfig = {
   },
   experimental: {
     appDir: true,
+    urlImports: ['https://gist.githack.com/'],
   },
 }
 

@@ -7,7 +7,8 @@ export default function Head() {
             <meta name="description" content="The website concerning the overlord, Jerry Jin."/>
             <meta charSet="UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <link rel="stylesheet" precedence="default" href="https://use.typekit.net/usx0uee.css" />
+            {/* @ts-ignore */}
+            <link rel="stylesheet" href="https://use.typekit.net/usx0uee.css" precedence="default" />
             <link rel="icon" type="image/png" href={favicon.src} sizes="128x128" />
         </>
     )

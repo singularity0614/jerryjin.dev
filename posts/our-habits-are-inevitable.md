@@ -2,12 +2,9 @@
 title: 'Our habits are inevitable'
 date: '03/01/2023'
 ---
-### Fined $280
 
-This is a custom link <CustomLink href="https://apple.com/au/">to apple</CustomLink> and it is very cool
+Again, sorry about the non-existent headers.
 
-This is a different custom link <CustomLink href="https://google.com">to google</CustomLink>, but it hasn't changed anything
+Welp, on the trip to Sydney, we were looking for some parking near Bondi Beach at 3:30pm, just to visit the famous beach for a little bit. It's pretty busy and parking is pretty hard to find, so imagine the delight when we found a place right next to the beach, seemingly with no issues. There was a 2P sign, but we were not going to stay for more than 2 hours at all.
 
-Write whatever I want
-
-What will this render?
+It was too good to be true, wasn't it? Well, an hour later when we arrived back, a $280 fine was tucked under the windscreen wiper.
