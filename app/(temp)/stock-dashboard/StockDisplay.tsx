@@ -8,7 +8,7 @@ let filterValues = {
     number: "",
 }
 
-export default function Forms(props) {
+export default function StockDisplay(props) {
     const stockList = props.stockList;
 
     const [filteredList, setFilteredList] = useState(stockList);
@@ -111,7 +111,7 @@ export default function Forms(props) {
                     </div>
                 </div>
             </section>
-            <section>
+            <section className="mb-16">
                     <div className="flex justify-between items-center w-[720px] xl:w-[50vw] mx-auto mt-8 text-sm text-gray-500">
                         <div className="pl-[26px]">Name/Code</div>
                         <div className="flex justify-end items-center pr-[26px]">
