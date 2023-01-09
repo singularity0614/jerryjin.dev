@@ -12,41 +12,6 @@ import { Title } from "../../Formats";
  * We store the intervals in an array [[[t1], [p1]], [[t2], [p2]]]
  * Then access through historical[state][0] or [1]
  */
-class Stock {
-    name: string;
-    code: string;
-    price: number;
-    priceChange: number;
-    historical: any;
-    open: number;
-    high: number;
-    low: number;
-    cap: number;
-    pe: number;
-    div: number;
-    vol: number;
-    yhigh: number;
-    ylow: number;
-    type: string;
-
-    constructor(name: string, code: string, price: number, priceChange: number, historical: any, open: number, high: number, low: number, cap: number, pe: number, div: number, vol: number, yhigh: number, ylow: number, type="stock") {
-        this.name = name;
-        this.code = code;
-        this.price = price;
-        this.priceChange = priceChange;
-        this.historical = historical;
-        this.open = open;
-        this.high = high;
-        this.low = low;
-        this.cap = cap;
-        this.pe = pe;
-        this.div = div;
-        this.vol = vol;
-        this.yhigh = yhigh;
-        this.ylow = ylow;
-        this.type = type;
-    }
-}
 
 /**
  * Stock indices throw a failed validation error, need to fix later
@@ -78,21 +43,31 @@ async function getStocks() {
         const vol = await res.summaryDetail.volume.raw ?? "-";
         const yhigh = await res.summaryDetail.fiftyTwoWeekHigh.raw;
         const ylow = await res.summaryDetail.fiftyTwoWeekLow.raw;
-        data.push([name, code, price, change, historical, open, high, low, cap, pe, div, vol, yhigh, ylow]);
+        const type = code[0] === "^" ? "index" : "stock";
+        data.push({
+            name: name,
+            code: code,
+            price: price,
+            priceChange: change,
+            historical: historical,
+            open: open,
+            high: high,
+            low: low,
+            cap: cap,
+            pe: pe,
+            div: div,
+            vol: vol,
+            yhigh: yhigh,
+            ylow: ylow,
+            type: type,
+        });
     }
     return data;
 }
 
 
 export default async function Home() {
-    const data = await getStocks();
-
-    const stockList = [];
-
-    for (let i=0; i<data.length; i++) {
-        const type = data[i][1][0] === "^" ? "index" : "stock";
-        stockList.push(new Stock(data[i][0], type === "stock" ? data[i][1].slice(0, 3) : data[i][1].slice(2, 5), data[i][2], data[i][3], data[i][4], data[i][5], data[i][6], data[i][7], data[i][8], data[i][9], data[i][10], data[i][11], data[i][12], data[i][13], type));
-    }
+    const stockList = await getStocks();
 
     return (
         <> 
