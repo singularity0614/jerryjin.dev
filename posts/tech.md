@@ -1,6 +1,6 @@
 ---
-title: Tech
-description: Tech used by the overlord, Jerry Jin.
+title: 'Tech'
+description: 'Tech used by the overlord, Jerry Jin.'
 ---
 
 As a student living in the digital age, tech is something I've entrenched myself into. Below are some of the digital products I use.

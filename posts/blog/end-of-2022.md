@@ -1,5 +1,6 @@
 ---
 title: 'End of 2022'
+description: 'The end of the year where Jerry Jin has grown into an overlord.'
 date: '31/12/2022'
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: 'Our habits are inevitable'
+description: 'Avoiding old habits is often impossible.'
 date: '03/01/2023'
 ---
 
