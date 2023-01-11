@@ -1,8 +1,12 @@
+import { getPostData } from "../../../posts";
+
 export default function Head() {
+    const postData = getPostData('about');
+
     return (
         <>
-            <title>About Me - Jerry Jin</title>
-            <meta name="description" content="About the overlord, Jerry Jin."/>
+            <title>{`${postData.data.title} - Jerry Jin`}</title>
+            <meta name="description" content={postData.data.description}/>
         </>
     )
 }

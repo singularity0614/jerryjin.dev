@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Link from "next/link";
 import Footer from "./Footer";
 
-export default function HomePage() {
+export default function Page() {
     const scrollToRef = useRef<HTMLDivElement>();
 
     const nextPage = () => {
@@ -52,14 +52,14 @@ export default function HomePage() {
                                 </div>
                             </div>
                             <div className="sm:w-[480px] mx-4 sm:mx-8 pb-16 sm:py-8">
-                                <h1 className="text-5xl font-semibold">Latest</h1>
+                                <h1 className="text-5xl font-semibold">Pages</h1>
                                 <hr className="w-[80px] border-2 border-[#3DD9BD] mt-4 mb-8 rounded-sm" />
                                 <div className="h-96 flex flex-col justify-between">
-                                    <Latest title="About" route="/about" />
-                                    <Latest title="Intern" route="/" />
-                                    <Latest title="Tech" route="/tech" />
-                                    <Latest title="Blog" route="/blog" />
-                                    <Latest title="Stocks" route="/stockdashboard" />
+                                    <Pages title="About" route="/about" />
+                                    <Pages title="Intern" route="/" />
+                                    <Pages title="Tech" route="/tech" />
+                                    <Pages title="Blog" route="/blog" />
+                                    <Pages title="Stocks" route="/stockdashboard" />
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@ function Skill(props) {
     );
 }
 
-function Latest(props) {
+function Pages(props) {
     return (
         <>
             <div className="border-b-slate-200 border-b pb-6">

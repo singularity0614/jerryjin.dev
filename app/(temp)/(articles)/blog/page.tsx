@@ -1,6 +1,6 @@
 import { Title } from "../../../Formats";
 import Link from "next/link";
-import { getSortedPostsData } from "./posts";
+import { getSortedPostsData } from "../../../posts";
 
 async function getData() {
     return getSortedPostsData();

@@ -1,7 +1,7 @@
-import { getPostData } from "../posts";
+import { getPostData } from "../../../../posts";
 
 async function getPost(params) {
-    const post = getPostData(params.id);
+    const post = getPostData(params.id, 'blog');
 
     return post;
 }
