@@ -27,7 +27,7 @@ function BlogPost(props) {
     const post = props.post;
 
     return (
-        <li className="odd:bg-slate-100 rounded-xl">
+        <li className="odd:bg-slate-100 dark:odd:bg-[#111111] rounded-xl">
             <div className="flex justify-between items-center p-6">
                 <p className="font-medium"><Link href={`/blog/${post.id}`}>{post.title}</Link></p>
                 <p className="text-sm text-gray-500">{post.date}</p>

@@ -42,16 +42,18 @@ export default function Article({postData, type=''}) {
                 type === "blog" ? (
                     <>
                         <Title title="blog" image={false} />
-                        <div className="bg-slate-100 py-8 sm:py-12 my-6 sm:my-8 mx-2 sm:mx-0 rounded-3xl">                
-                            <div className="text-center text-2xl sm:text-4xl font-semibold mb-2 sm:mb-4">{postData.data.title}</div>
-                            <div className="text-center text-xl text-gray-500">{postData.data.date}</div>
+                        <div className="mx-2 sm:mx-0">
+                            <div className="bg-slate-100 dark:bg-[#111111] py-8 sm:py-12 my-6 sm:my-8 rounded-3xl">                
+                                <div className="text-center text-2xl sm:text-4xl font-semibold mb-2 sm:mb-4">{postData.data.title}</div>
+                                <div className="text-center text-xl text-gray-500 dark:text-gray-200">{postData.data.date}</div>
+                            </div>
+                            <Paragraph><CustomLink href="/blog">← All blogs</CustomLink></Paragraph>
                         </div>
-                        <Paragraph><CustomLink href="/blog">← All blogs</CustomLink></Paragraph>
                     </>
                     
                 ) : null
             }           
-            <Markdown options={options}>{postData.content}</Markdown>
+            <Markdown options={options} className="mx-2 sm:mx-0">{postData.content}</Markdown>
             
         </>
     )

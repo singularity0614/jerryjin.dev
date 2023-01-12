@@ -57,17 +57,17 @@ function StockDisplay(props) {
     return (
         <>
             <div onClick={() => setCollapse(!collapse)} className="button flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
-                <div className="flex justify-between items-center bg-[#F8FAFC] px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-slate-100 hover:cursor-pointer">
+                <div className="flex justify-between items-center bg-[#F8FAFC] dark:bg-black px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-slate-100 dark:hover:bg-[#222222] hover:cursor-pointer">
                     <div className="">
                         <div>{name}</div>
-                        <div className="text-sm text-gray-500">{code}</div>
+                        <div className="text-sm text-gray-500 dark:text-gray-200">{code}</div>
                     </div>
                     <div className="flex justify-end items-center font-medium">
                         <div className="flex justify-end items-center">
                             <div className="p-1.5">{dollarSign}{price.toFixed(2)}</div>
                         </div>
                         <div className="w-[96px] flex justify-end items-center">
-                            <div className={colour}>{sign}{dollarSign}{Math.abs(priceChange).toFixed(2)}</div>
+                            <div className={`${colour}`}>{sign}{dollarSign}{Math.abs(priceChange).toFixed(2)}</div>
                         </div>
                         <div className="w-[116px] flex justify-end items-center">
                             <div className={`flex justify-evenly items-center p-1.5 rounded-lg ${colour} ${backgroundColour}`}>
@@ -79,7 +79,7 @@ function StockDisplay(props) {
                 </div>
             </div>
             <div className={`expanded -z-10 ${collapse === true ? "animate-slide-in-from-top" : "animate-slide-out-to-top"} flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]`}>
-                <div className="flex flex-col justify-center items-center bg-[#F8FAFC] px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw]">
+                <div className="flex flex-col justify-center items-center bg-[#F8FAFC] dark:bg-black px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw]">
                     <div className={`${collapse === true ? "animate-fade-in" : "animate-fade-out"} flex flex-col justify-center items-center`}>                            
                         {name}
                         <br/>
@@ -88,78 +88,15 @@ function StockDisplay(props) {
                         </div>
                     </div>
                     <div className={`grid grid-rows-3 grid-flow-col gap-x-1 gap-y-1 ${collapse === true ? "animate-fade-in" : "animate-fade-out"} pt-3 pb-2`}>
-                        <div className="flex justify-start items-center text-sm w-[180px]">
-                            <div className="flex justify-start items-center w-24">
-                                Open
-                            </div>
-                            <div className="flex justify-start items-center text-gray-500">
-                                {summary[0]}
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center text-sm w-[180px]">
-                            <div className="flex justify-start items-center w-24">
-                                High
-                            </div>
-                            <div className="flex justify-start items-center text-gray-500">
-                                {summary[1]}
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center text-sm w-[180px]">
-                            <div className="flex justify-start items-center w-24">
-                                Low
-                            </div>
-                            <div className="flex justify-start items-center text-gray-500">
-                                {summary[2]}
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center text-sm w-[180px]">
-                            <div className="flex justify-start items-center w-24">
-                                Mkt cap
-                            </div>
-                            <div className="flex justify-start items-center text-gray-500">
-                                {summary[3]}
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center text-sm w-[180px]">
-                            <div className="flex justify-start items-center w-24">
-                                P/E ratio
-                            </div>
-                            <div className="flex justify-start items-center text-gray-500">
-                                {summary[4]}
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center text-sm w-[180px]">
-                            <div className="flex justify-start items-center w-24">
-                                Div yield
-                            </div>
-                            <div className="flex justify-start items-center text-gray-500">
-                                {summary[5]}
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center text-sm w-[180px]">
-                            <div className="flex justify-start items-center w-24">
-                                Volume
-                            </div>
-                            <div className="flex justify-start items-center text-gray-500">
-                                {summary[6]}
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center text-sm w-[180px]">
-                            <div className="flex justify-start items-center w-24">
-                                52-wk high
-                            </div>
-                            <div className="flex justify-start items-center text-gray-500">
-                                {summary[7]}
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center text-sm w-[180px]">
-                            <div className="flex justify-start items-center w-24">
-                                52-wk low
-                            </div>
-                            <div className="flex justify-start items-center text-gray-500">
-                                {summary[8]}
-                            </div>
-                        </div>
+                        <Statistic stat={summary[0]}>Open</Statistic>
+                        <Statistic stat={summary[1]}>High</Statistic>
+                        <Statistic stat={summary[2]}>Low</Statistic>
+                        <Statistic stat={summary[3]}>Mkt cap</Statistic>
+                        <Statistic stat={summary[4]}>P/E ratio</Statistic>
+                        <Statistic stat={summary[5]}>Div yield</Statistic>
+                        <Statistic stat={summary[6]}>Volume</Statistic>
+                        <Statistic stat={summary[7]}>52-wk high</Statistic>
+                        <Statistic stat={summary[8]}>52-wk low</Statistic>
                     </div>
                 </div>
             </div>        
@@ -168,3 +105,18 @@ function StockDisplay(props) {
 }
 
 export default StockDisplay;
+
+function Statistic({stat, children}) {
+    return (
+        <>
+            <div className="flex justify-start items-center text-sm w-[180px]">
+                <div className="flex justify-start items-center w-24">
+                    {children}
+                </div>
+                <div className="flex justify-start items-center text-gray-500 dark:text-gray-200">
+                    {stat}
+                </div>
+            </div>
+        </>
+    )
+}

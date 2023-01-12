@@ -89,30 +89,30 @@ export default function StockDisplay(props) {
                         <div className="flex justify-center items-center">
                             <label htmlFor="filter" className="pr-1 flex">Filter:</label>
                             <div id="filter" className="flex justify-center items-center" onChange={filterByType}>
-                                <select name="select">
+                                <select name="select" className="bg-[#F8FAFC] dark:bg-black">
                                     <option value="above">Above</option>
                                     <option value="below">Below</option>
                                     <option value="up">Up</option>
                                     <option value="equal">Equal</option>
                                     <option value="down">Down</option>
                                 </select>
-                                <input name="number" className="px-1 mx-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg w-20 bg-[#F8FAFC]" onChange={filterByType} type="number" min={0}/>
+                                <input name="number" className="px-1 mx-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg w-20 bg-[#F8FAFC] dark:bg-black" onChange={filterByType} type="number" min={0}/>
                             </div>
                         </div>
                         <div className="flex justify-center items-center">
                             <label htmlFor="search" className="mx-2">Search:</label>
-                            <input id="search" name="search" className="px-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg bg-[#F8FAFC]" onChange={filterBySearch} />
+                            <input id="search" name="search" className="px-1 focus:outline-none border-solid border-2 border-neutral-300 rounded-lg bg-[#F8FAFC] dark:bg-black" onChange={filterBySearch} />
                         </div>
                     </div>
                 </div>
                 <div className="flex justify-center items-center border-solid border-t-[1px] pt-4 border-neutral-300">
-                    <div className="w-[720px] xl:w-[50vw] text-sm text-gray-500">
+                    <div className="w-[720px] xl:w-[50vw] text-sm text-gray-500 dark:text-gray-200">
                         Results: {filteredList.length}
                     </div>
                 </div>
             </section>
             <section className="mb-16">
-                    <div className="flex justify-between items-center w-[720px] xl:w-[50vw] mx-auto mt-8 text-sm text-gray-500">
+                    <div className="flex justify-between items-center w-[720px] xl:w-[50vw] mx-auto mt-8 text-sm text-gray-500 dark:text-gray-200">
                         <div className="pl-[26px]">Name/Code</div>
                         <div className="flex justify-end items-center pr-[26px]">
                             <div className="flex justify-end items-center">
@@ -132,7 +132,7 @@ export default function StockDisplay(props) {
                                 <Button collapse={[collapse, setCollapse]} key={index} index={index} type={item.type} stockName={item.name} stockCode={item.code} price={item.price} priceChange={item.priceChange} historical={item.historical} summary={[item.open, item.high, item.low, item.cap, item.pe, item.div, item.vol, item.yhigh, item.ylow]}></Button>
                             ))
                             : <div className="button flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto mt-2 mb-6 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
-                                <div className="flex justify-center items-center bg-[#F8FAFC] px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-slate-100 hover:cursor-pointer">
+                                <div className="flex justify-center items-center bg-[#F8FAFC] dark:bg-black px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-slate-100 dark:hover:bg-[#222222] hover:cursor-pointer">
                                     404: Your query returned no stocks :/
                                 </div>
                             </div>

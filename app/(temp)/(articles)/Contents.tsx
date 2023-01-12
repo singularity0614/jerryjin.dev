@@ -6,7 +6,7 @@ export default function Contents({headings}) {
             <div className="hidden xl:inline-block fixed top-1/2 -translate-y-1/2 left-[calc(25vw-160px-9rem)] w-fit h-fit">
                 <p className="text-lg py-3 font-bold">CONTENTS</p>
                 <div className="table-row">
-                    <div className="table-cell bg-gradient-to-b from-[#049CB7] to-[#3DD9BD] w-2 rounded-md"></div>
+                    <div className="table-cell bg-gradient-to-b from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] w-2 rounded-md"></div>
                     <div className="table-cell">
                         {
                             headings.map((x, index) => {
