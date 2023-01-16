@@ -66,7 +66,7 @@ export default function Page() {
                                     <Pages title="Intern" route="/" />
                                     <Pages title="Tech" route="/tech" />
                                     <Pages title="Blog" route="/blog" />
-                                    <Pages title="Stocks" route="/stockdashboard" />
+                                    <Pages title="Stock Dashboard" route="/stock-dashboard" />
                                 </div>
                             </div>
                         </div>

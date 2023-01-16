@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Markdown from "markdown-to-jsx";
 import Contents from "./Contents";
-import { Title, Heading3, Heading4, Paragraph, Footnote, CustomLink } from "../../Formats";
+import { Title, Heading3, Heading4, Paragraph, UnorderedList, OrderedList, ListItem, Footnote, CustomLink } from "../../Formats";
 
 export default function Article({postData, type=''}) {
     const [headings, setHeadings] = useState([]);
@@ -26,6 +26,15 @@ export default function Article({postData, type=''}) {
             },
             p: {
                 component: Paragraph,
+            },
+            ul: {
+                component: UnorderedList,
+            },
+            ol: {
+                component: OrderedList,
+            },
+            li: {
+                component: ListItem,
             },
             Footnote: {
                 component: Footnote,

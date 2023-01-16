@@ -25,21 +25,12 @@ As with every other student, this period is quite daunting to me. It feels quite
 
 For reference, my VCE subjects are:
 
-<ul className="text-lg list-disc list-inside mb-6">
-
-    <li className="mb-1">English Language</li>
-
-    <li className="mb-1">Mathematical Methods</li>
-
-    <li className="mb-1">Specialist Mathematics</li>
-
-    <li className="mb-1">Chinese Second Language</li>
-
-    <li className="mb-1">Chemistry</li>
-
-    <li className="mb-1">Physics</li>
-
-</ul>
+* English Language
+* Mathematical Methods
+* Specialist Mathematics
+* Chinese Second Language
+* Chemistry
+* Physics
 
 I'm doing Methods and Chinese a year early in Year 11.
 

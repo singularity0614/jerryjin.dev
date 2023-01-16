@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from "react";
 import StockGraph from "./StockGraph";
 
 function StockDisplay(props) {
@@ -40,7 +39,7 @@ function StockDisplay(props) {
         arrow = null;
     }
     
-    const [collapse, setCollapse] = useState(false);
+    const [collapse, setCollapse] = props.collapse;
     
     const data = {
         datasets: [
@@ -56,7 +55,7 @@ function StockDisplay(props) {
     
     return (
         <>
-            <div onClick={() => setCollapse(!collapse)} className="button flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
+            <div onClick={() => setCollapse(parseInt(collapse.slice(8)) !== index ? `collapse${index}` : "collapsenone")} className="button flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]">
                 <div className="flex justify-between items-center bg-[#F8FAFC] dark:bg-black px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw] hover:bg-slate-100 dark:hover:bg-[#222222] hover:cursor-pointer">
                     <div className="">
                         <div>{name}</div>
@@ -78,16 +77,16 @@ function StockDisplay(props) {
                     </div>
                 </div>
             </div>
-            <div className={`expanded -z-10 ${collapse === true ? "animate-slide-in-from-top" : "animate-slide-out-to-top"} flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]`}>
+            <div className={`expanded -z-10 ${collapse === `collapse${index}` ? "animate-slide-in-from-top" : "animate-slide-out-to-top"} flex justify-center w-[720px] xl:w-[50vw] rounded-xl p-0.5 mx-auto my-2 bg-gradient-to-r from-[#bdc3c7] to-[#7d868f]`}>
                 <div className="flex flex-col justify-center items-center bg-[#F8FAFC] dark:bg-black px-6 py-5 rounded-[10px] w-[792px] xl:w-[60vw]">
-                    <div className={`${collapse === true ? "animate-fade-in" : "animate-fade-out"} flex flex-col justify-center items-center`}>                            
+                    <div className={`${collapse === `collapse${index}` ? "animate-fade-in" : "animate-fade-out"} flex flex-col justify-center items-center`}>                            
                         {name}
                         <br/>
                         <div className="flex justify-center items-center">
                             <StockGraph data={data} priceChange={priceChange}></StockGraph>
                         </div>
                     </div>
-                    <div className={`grid grid-rows-3 grid-flow-col gap-x-1 gap-y-1 ${collapse === true ? "animate-fade-in" : "animate-fade-out"} pt-3 pb-2`}>
+                    <div className={`grid grid-rows-3 grid-flow-col gap-x-1 gap-y-1 ${collapse === `collapse${index}` ? "animate-fade-in" : "animate-fade-out"} pt-3 pb-2`}>
                         <Statistic stat={summary[0]}>Open</Statistic>
                         <Statistic stat={summary[1]}>High</Statistic>
                         <Statistic stat={summary[2]}>Low</Statistic>

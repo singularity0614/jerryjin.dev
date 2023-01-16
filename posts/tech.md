@@ -49,13 +49,8 @@ It's such a quality-of-life improvement which has brought not just productivity,
 
 The laptop I have used for the past few years is a Dell XPS 15 7590. The reason the specs are so kitted out is because:
 
-<ol className="text-lg list-decimal list-inside mb-6">
-
-    <li className="mb-1">It's probably going to be the laptop and computer which I use until university.</li>
-
-    <li className="mb-1">There was a good deal, so why not?</li>
-
-</ol>
+1. It's probably going to be the laptop and computer which I use until university.
+2. There was a good deal, so why not?
 
 Nowadays, because I don't need to dock it, I use it at school for more intensive desktop tasks such as game development. However, because of its slow startup, loud fans and poor battery, it does prove to be an inconvenience at times, which is why I'm considering upgrading to an Apple Silicon MacBook.
 
@@ -77,7 +72,7 @@ That being said, the amount of screen real estate is especially useful where I h
 
 Mouse: I use the <CustomLink href="https://amzn.to/3XlVLzI" type="amazon">Logitech MX Master 3S</CustomLink> as my mouse on my desk. It is the perfect productivity mouse, with many reprogrammable buttons and a super fast scroll wheel. I have its 3 connections paired to my Mac, iPad and laptop.
 
-Keyboard: I use a Keychron K1 as the keyboard for my setup. It has a low-profile, but the sound the keys and stabilisers make are not the best, so I have been thinking of upgrading.
+Keyboard: I use a <CustomLink href="https://amzn.to/3CLDrZj" type="amazon">Keychron K1</CustomLink> as the keyboard for my setup. It has a low-profile, but the sound the keys and stabilisers make are not the best, so I have been thinking of upgrading.
 
 Webcam: I have a <CustomLink href="https://amzn.to/3vOUrJY" type="amazon">Logitech BRIO</CustomLink> 4K webcam mounted on top of my monitors. To be honest, I rarely use it nowadays, but before with remote learning and lockdown, it was very useful for video calls.
 
