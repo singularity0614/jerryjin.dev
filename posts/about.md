@@ -11,7 +11,7 @@ As of 2023, I am a student in Year 11, enroute to finishing my high school journ
 
     <li className="mb-1">I am currently a Year 11 student studying at <CustomLink href="https://cgs.vic.edu.au">Camberwell Grammar School</CustomLink>.</li>
 
-    <li className="mb-1">On <CustomLink href="/">this website</CustomLink>, I showcase myself as well as some other projects, including this <CustomLink href="/stockdashboard">stock dashboard</CustomLink>.</li>
+    <li className="mb-1">On <CustomLink href="/">this website</CustomLink>, I showcase myself as well as some other projects, including this <CustomLink href="/stock-dashboard">stock dashboard</CustomLink>.</li>
 
     <li className="mb-1">I also try to invest in stocks, so if you have any advice, feel free to share it 😊</li>
 
