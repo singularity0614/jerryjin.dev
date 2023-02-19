@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-export function Title(props) {
+export function Title({title, image, alt = null, src = null}) {
     return (
         <div className="mx-2 sm:mx-0">
-            <p className="text-xs text-gray-500 dark:text-gray-200 font-medium pl-[5px] mb-3">{props.title.toUpperCase()}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-200 font-medium pl-[5px] mb-3">{title.toUpperCase()}</p>
             <h1 className="animate-fade-in-from-bottom font-extrabold text-9xl">hi.</h1>
-            <h2 className="animate-fade-in-from-bottom font-semibold text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] w-fit pb-1">{props.title.toLowerCase()}</h2>
+            <h2 className="animate-fade-in-from-bottom font-semibold text-7xl text-transparent bg-clip-text bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] w-fit pb-1">{title.toLowerCase()}</h2>
             {
-                props.image == true ? <img className="show-on-scroll animate-fade-in-from-bottom rounded-xl my-16" alt={props.alt} src={props.src} /> : null
+                image == true ? <img className="show-on-scroll animate-fade-in-from-bottom rounded-xl my-16" alt={alt} src={src} /> : null
             }
         </div>
     )
@@ -89,6 +89,17 @@ export function CustomLink({href, type = "", children}) {
     return (
         <>
             {href[0] === "/" ? <Link href={href} className={className}>{children}<span className="h-5 w-5 relative">{amazonLogo}</span></Link> : <a href={href} target="_blank" rel="noopener noreferrer" className={className}>{children}<span className="h-5 w-5 relative">{amazonLogo}</span></a>}
+        </>
+    )
+}
+
+export function CustomImage({src, alt, children}) {
+    return (
+        <>
+            <div className="my-16">
+                <img className="show-on-scroll animate-fade-in-from-bottom rounded-xl mb-3" alt={alt} src={src} />
+                <p className="text-sm font-light"><em>{children}</em></p>
+            </div>
         </>
     )
 }

@@ -1,4 +1,4 @@
-import favicon from '../public/favicon-128x128.png';
+import favicon from '../public/favicons/favicon-128x128.png';
 
 export default function DefaultTags() {
     return (
