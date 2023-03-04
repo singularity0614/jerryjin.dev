@@ -16,9 +16,9 @@ export default function Page() {
         <>
             <main className="">
                 <section>
-                    <div className="h-screen flex flex-col justify-center items-center bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC]">
+                    <div className="h-screen flex flex-col justify-center items-center animate-gradient-anim bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC]">
                         <h1 className="hidden sm:block font-semibold text-2xl absolute left-20 top-8">Jerry Jin</h1>
-                        <h1 className="font-semibold text-9xl">hi.</h1>
+                        <h1 className="font-semibold text-9xl text-transparent bg-clip-text bg-gradient-to-r from-[#222222] via-[#F8FAFC] to-[#222222] animate-shine">hello.</h1>
                         <div className="sm:hidden absolute top-[6vw] right-[6vw]">
                             <ThemeSwitcher />
                         </div>

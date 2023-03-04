@@ -88,6 +88,26 @@ module.exports = {
             transform: 'translate3d(0, -50px, 0) scale(1)',
           },
         },
+        'gradient-anim': {
+          '0%, 100%': {
+            'background-size':'200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size':'200% 200%',
+            'background-position': 'right center'
+          },
+        },
+        'shine': {
+          '0%, 100%': {
+            'background-size':'300% 300%',
+            'background-position': 'right center'
+          },
+          '50%': {
+            'background-size':'300% 300%',
+            'background-position': 'left center'
+          },
+        },
       },
       animation: {
         'fade-in-from-bottom': 'fade-in-from-bottom 800ms cubic-bezier(0.4, 0, 0.25, 1)',
@@ -95,6 +115,8 @@ module.exports = {
         'fade-out': 'fade-out 600ms cubic-bezier(0.4, 0, 0.25, 1) forwards',
         'slide-in-from-top': 'slide-in-from-top 800ms forwards',
         'slide-out-to-top': 'slide-out-to-top 800ms forwards',
+        'gradient-anim': 'gradient-anim 10s ease infinite',
+        'shine': 'shine 8s infinite',
       }
     },
   },

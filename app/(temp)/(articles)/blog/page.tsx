@@ -1,6 +1,7 @@
 import { Title } from "../../../Formats";
 import Link from "next/link";
 import { getSortedPostsData } from "../../../posts";
+import Pagination from "./Pagination";
 
 async function getData() {
     return getSortedPostsData();
@@ -12,26 +13,7 @@ export default async function Page() {
     return (
         <> 
             <Title title="blog" image={false} /> 
-            <ul className="py-16">
-                {
-                    postsData.map((x, index) => (
-                        <BlogPost key={index} post={x} />
-                    ))
-                }   
-            </ul>                
+            <Pagination postsData={postsData}/>            
         </>
-    )
-}
-
-function BlogPost(props) {
-    const post = props.post;
-
-    return (
-        <li className="odd:bg-slate-100 dark:odd:bg-[#111111] rounded-xl">
-            <div className="flex justify-between items-center p-6">
-                <p className="font-medium"><Link href={`/blog/${post.id}`}>{post.title}</Link></p>
-                <p className="text-sm text-gray-500">{post.date}</p>
-            </div>
-        </li>
     )
 }
