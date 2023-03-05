@@ -1,5 +1,6 @@
 ---
 title: Disguised loneliness
+description: How our relationships with others look different to what they are like.
 date: 26/02/2023
 ---
 

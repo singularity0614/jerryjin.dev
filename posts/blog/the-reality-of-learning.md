@@ -1,5 +1,6 @@
 ---
 title: The reality of learning
+description: Learning can be hard and often it seems like there is no face value of it.
 date: 19/02/2023
 ---
 

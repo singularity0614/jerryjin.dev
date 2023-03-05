@@ -1,7 +1,7 @@
 ---
-title: 'End of 2022'
-description: 'The end of the year where Jerry Jin has grown into an overlord.'
-date: '31/12/2022'
+title: End of 2022
+description: The end of the year where Jerry Jin has grown into an overlord.
+date: 31/12/2022
 ---
 
 This year was one of the better years for me, both in terms of my academics as well as my well-being. The biggest change was probably the end of lockdowns, being free for the whole year certainly improved my social life.

@@ -1,7 +1,7 @@
 ---
-title: 'Earning money at 16'
-description: 'The income streams Jerry Jin is building to become the overlord.'
-date: '11/01/2023'
+title: Earning money at 16
+description: The income streams Jerry Jin is building to become the overlord.
+date: 11/01/2023
 ---
 Well, lets test these headers.
 

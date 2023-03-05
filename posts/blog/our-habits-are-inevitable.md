@@ -1,7 +1,7 @@
 ---
-title: 'Our habits are inevitable'
-description: 'Avoiding old habits is often impossible.'
-date: '03/01/2023'
+title: Our habits are inevitable
+description: Avoiding old habits is often impossible.
+date: 03/01/2023
 ---
 
 Again, sorry about the non-existent headers.

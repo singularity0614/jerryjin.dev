@@ -1,5 +1,6 @@
 ---
 title: Coding as a hobby
+description: Coding projects Jerry Jin the overlord has undertaken.
 date: 13/01/2023
 ---
 

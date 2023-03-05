@@ -1,5 +1,6 @@
 ---
 title: A new year of school
+description: The start of Jerry Jin taking over the school.
 date: 03/02/2023
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Handicapped at the start
+description: How partaking in activities presents us with a dilemma.
 date: 11/02/2023
 ---
 
