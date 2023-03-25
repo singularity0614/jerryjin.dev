@@ -27,9 +27,9 @@ export default function Pagination({postsData}) {
                         {
                             pageNum === 0
                             ? <div className="w-10 h-10 rounded-lg hidden sm:block"></div>
-                            : <button onClick={() => setPageNum(pageNum-1)} className={`bg-slate-100 dark:bg-[#111111] w-10 h-10 rounded-lg hidden sm:flex justify-center items-center`}>
+                            : <button onClick={() => setPageNum(Math.max(pageNum-5, 0))} className={`bg-slate-100 dark:bg-[#111111] w-10 h-10 rounded-lg hidden sm:flex justify-center items-center`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
                                 </svg>
                             </button>
                         }
@@ -104,9 +104,9 @@ export default function Pagination({postsData}) {
                         {
                             pageNum === pagesArray.length-1
                             ? <div className="w-10 h-10 rounded-lg hidden sm:block"></div>
-                            : <button onClick={() => setPageNum(pageNum+1)} className={`bg-slate-100 dark:bg-[#111111] w-10 h-10 rounded-lg hidden sm:flex justify-center items-center`}>
+                            : <button onClick={() => setPageNum(Math.min(pageNum+5, pagesCount-1))} className={`bg-slate-100 dark:bg-[#111111] w-10 h-10 rounded-lg hidden sm:flex justify-center items-center`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
                                 </svg>
                             </button>
                         }
