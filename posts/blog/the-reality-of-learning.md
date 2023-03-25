@@ -20,7 +20,7 @@ But I still need to work on converting Chinese from something I am learning beca
 
 #### Toning things down
 
-One of my all time favourite apps to use is <CustomLink href="https://notion.so">Notion</CustomLink> and it is a really popular app at school from what I can tell. Not only does it help with taking and organising notes, but it can be used as an overall life manager for scheduling, task managing and much more. But the thing is, I've started to notice that more and more people have increasingly complex/advanced Notion setups, which to me seems counter intuitive as Notion aims to de-clutter your life, not make it more confusing.
+One of my all-time favourite apps to use is <CustomLink href="https://notion.so">Notion</CustomLink> and it is a really popular app at school from what I can tell. Not only does it help with taking and organising notes, but it can be used as an overall life manager for scheduling, task managing and much more. But the thing is, I've started to notice that more and more people have increasingly complex/advanced Notion setups, which to me seems counter intuitive as Notion aims to de-clutter your life, not make it more confusing.
 
 So recently, I have been trying to cut down on the amount of stuff I do in Notion and instead use apps that are more specialised in certain areas (Todoist, Fantastical, Anki). In fact, I only have 3 pages in my Notion now.
 
@@ -30,7 +30,7 @@ There is not much point that I feel in spending too long making the "perfect" No
 
 ### A new device
 
-Well, thanks to my Apple stock performing *so* well and along with some other cost-saving measures taken, I've upgraded my laptop from what was a Dell XPS 15 (7590) to a base model <CustomLink href="https://amzn.to/41bCbZN" type="amazon">16-inch Macbook Pro</CustomLink>.
+Well, thanks to my Apple stock performing *so* well and along with some other cost-saving measures taken, I've upgraded my laptop from what was a Dell XPS 15 (7590) to a base model <CustomLink href="https://amzn.to/41bCbZN" type="amazon">16-inch MacBook Pro</CustomLink>.
 
 Although people usually say money can't buy happiness, in this scenario I'm 100% sure it can. The differences between the two are night and day. From my limited 2 days of using this, the battery life has been insane, I've gone literally these 2 days without charging it and there is still more than 50% battery left (with apps like <CustomLink href="https://discord.com">Discord</CustomLink> and Notion open). Previously, I would go half the day with the XPS and then it would die on me, which is really annoying considering I've gone fully digital with books and notes at school.
 

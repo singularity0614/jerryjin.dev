@@ -14,7 +14,7 @@ I feel semi-conflicted, on one hand it has truly been quite a long while since t
 
 ### Looking ahead
 
-Something else truly terrifying, is the fact that in order to reach the next summer holidays, I will have needed to finished two VCE 3/4 subjects which are Chinese and Methods. It feels as though they are some endgame boss that you need to defeat in order to progress to the next level.
+Something else truly terrifying, is the fact that in order to reach the next summer holidays, I will have needed to have finished two VCE 3/4 subjects which are Chinese and Methods. It feels as though they are some endgame bosses that you need to defeat in order to progress to the next level.
 
 At the end of this year, some of my old friends will have graduated and I will have one more year of school left. It's honestly so surreal to think about, these years of school just went by so fast and now they are nearly over. 2024 feels as close as it ever has been.
 

@@ -18,7 +18,7 @@ This would also be my 3rd time doing the competition, following up from my parti
 
 #### The Hassle
 
-The thing about AMO is that, given it is a total of 8 hours, and that the test is sat during school hours, I do have to sacrifice a lot of learning time just to do it. Our school's period are short (40 minutes), and AMO takes up a combined total of 10 periods of class in just 2 days. Every year, I've felt so far behind at the start of the school year because of this, whilst my classmates are properly learning VCE subjects, I'm doing some maths comp which I'm barely good at.
+The thing about AMO is that, given it is a total of 8 hours, and that the test is sat during school hours, I do have to sacrifice a lot of learning time just to do it. Our school's periods are short (40 minutes), and AMO takes up a combined total of 10 periods of class in just 2 days. Every year, I've felt so far behind at the start of the school year because of this, whilst my classmates are properly learning VCE subjects, I'm doing some maths comp which I'm barely good at.
 
 I never trained to become a "pro" maths olympiad guy, so revising this type of content to me felt like just extra, unnecessary burden.
 

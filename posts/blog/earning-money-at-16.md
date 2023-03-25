@@ -11,7 +11,7 @@ Well, lets test these headers.
 
 Looks like they work! That took quite a while.
 
-Meanwhile, recently I have been dabbling in the money making process to make some pocket money.
+Meanwhile, recently I have been dabbling in the money-making process to make some pocket money.
 
 At 16, you're normally expected to start working a part-time job, say at McDonald's, both to earn money and to gain some valuable work experience. It helps with developing necessary life skills (communication, problem solving, etc...) which fundamentally are the basis of many jobs, whether at a McDonald's or as a doctor.
 

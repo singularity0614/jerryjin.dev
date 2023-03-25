@@ -9,7 +9,7 @@ As a student living in the digital age, tech is something I've entrenched myself
 
 #### 📱 iPhone
 
-I am currently using an <CustomLink href="https://amzn.to/3vSkzUm" type="amazon">iPhone 14 Pro</CustomLink>, which is the second phone I've owned, the first one being the iPhone 11. The 3 year gap bewteen the models compelled me to make the upgrade, and the difference is certainly night and day. The difference between speed, camera quality, display, etc. has really stood out to me.
+I am currently using an <CustomLink href="https://amzn.to/3vSkzUm" type="amazon">iPhone 14 Pro</CustomLink>, which is the second phone I've owned, the first one being the iPhone 11. The 3 year gap between the models compelled me to make the upgrade, and the difference is certainly night and day. The difference between speed, camera quality, display, etc. has really stood out to me.
 
 The iPhone is the gateway to so many things Apple, and since I have so deeply integrated everything into the Apple Ecosystem, it makes it almost impossible to switch away from the iPhone lineup.
 
@@ -47,16 +47,17 @@ It's such a quality-of-life improvement which has brought not just productivity,
 
 #### 💻 Laptop
 
-The laptop I have used for the past few years is a Dell XPS 15 7590. The reason the specs are so kitted out is because:
+I recently just bought a base model <CustomLink href="https://amzn.to/41bCbZN" type="amazon">16-inch MacBook Pro</CustomLink> for use at home and at school. Compared to my old Dell XPS, it is so fast, built so well and the battery life is literally insane.
 
-1. It's probably going to be the laptop and computer which I use until university.
-2. There was a good deal, so why not?
+I can now go 3-4 days of school without having to worry about charging and when I do have to charge it, 1-2 hours is all its needs to get back to 100% again. Compare this to my old laptop, which would normally die after half a day of school, the difference is huge. Another plus is that I'm getting these 3-4 days whilst having around 10 apps (including Notion, Discord) all open, all the time. Before on my XPS, I'd have to close each app everytime I put it to sleep, otherwise it would just die during sleep.
 
-Nowadays, because I don't need to dock it, I use it at school for more intensive desktop tasks such as game development. However, because of its slow startup, loud fans and poor battery, it does prove to be an inconvenience at times, which is why I'm considering upgrading to an Apple Silicon MacBook.
+Performance is also great, all these apps being open have no effect on the performance at all; no fans can be heard and everything runs buttery smooth. On the XPS, as soon as any app was opened, the fans spun on audibly and it would be a great annoyance.
 
-Being the only device I own not integrated in the Apple ecosystem does make it slightly unused at home, another reason why I'm considering switching from Windows to Mac.
+It also connects in with my Apple ecosystem seamlessly, so that is a major upside, as well as allowing me to use apps such as Arc Browser.
 
-<Footnote>Memory: 32GB, Storage: 1TB</Footnote>
+Given the price, but also the capabilities, I'll definitely use this into university. Overall, it's a great laptop that has improved on many aspects of my old laptop.
+
+<Footnote>Memory: 16GB, Storage: 512GB</Footnote>
 
 #### 🎧 Audio
 
@@ -70,7 +71,7 @@ The monitor setup I have is slightly overkill, with it being 2 32-inch 4K Dell m
 
 That being said, the amount of screen real estate is especially useful where I have work on one monitor and email, messages, calendar and todos on the other.
 
-Mouse: I use the <CustomLink href="https://amzn.to/3XlVLzI" type="amazon">Logitech MX Master 3S</CustomLink> as my mouse on my desk. It is the perfect productivity mouse, with many reprogrammable buttons and a super fast scroll wheel. I have its 3 connections paired to my Mac, iPad and laptop.
+Mouse: I use the <CustomLink href="https://amzn.to/3XlVLzI" type="amazon">Logitech MX Master 3S</CustomLink> as my mouse on my desk. It is the perfect productivity mouse, with many reprogrammable buttons and a super-fast scroll wheel. I have its 3 connections paired to my Mac, iPad and laptop.
 
 Keyboard: I use a <CustomLink href="https://amzn.to/3CLDrZj" type="amazon">Keychron K1</CustomLink> as the keyboard for my setup. It has a low-profile, but the sound the keys and stabilisers make are not the best, so I have been thinking of upgrading.
 
@@ -79,6 +80,3 @@ Webcam: I have a <CustomLink href="https://amzn.to/3vOUrJY" type="amazon">Logite
 Microphone: I have a <CustomLink href="https://amzn.to/3GVbUqN" type="amazon">Blue Yeti Nano</CustomLink> attached to a <CustomLink href="https://amzn.to/3vS2oOy" type="amazon">Rode PSA1</CustomLink> boom arm, and it is usually used for both remote learning and just calls with friends. Having my friends always comment on my audio quality is always a nice, endorphin releasing thing.
 
 <Footnote>Key Switches: Gateron Brown</Footnote>
-
-### Other things
-

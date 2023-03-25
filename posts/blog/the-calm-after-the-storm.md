@@ -4,7 +4,7 @@ description: A personal exploration into what I do after a turbulent period.
 date: 19/03/2023
 ---
 
-Generally, the feeling after a test/exam is always mixed, some people look back with worry, regret, some with relief, happiness, but for me, I'm usually just very non-chalant.
+Generally, the feeling after a test/exam is always mixed, some people look back with worry, regret, some with relief, happiness, but for me, I'm usually just very nonchalant.
 
 ### Calming the mind
 
@@ -31,5 +31,5 @@ Short segment, recently (thanks to friends), I have switched over to Arc Browser
 ### Plans for next week
 
 1. Don't stress over anything
-2. Think and act postively
+2. Think and act positively
 3. Go do some exercise

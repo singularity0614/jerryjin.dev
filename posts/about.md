@@ -7,15 +7,9 @@ As of 2023, I am a student in Year 11, enroute to finishing my high school journ
 
 ### Current Projects
 
-<ol className="text-lg list-decimal list-inside mb-6">
-
-    <li className="mb-1">I am currently a Year 11 student studying at <CustomLink href="https://cgs.vic.edu.au">Camberwell Grammar School</CustomLink>.</li>
-
-    <li className="mb-1">On <CustomLink href="/">this website</CustomLink>, I showcase myself as well as some other projects, including this <CustomLink href="/stock-dashboard">stock dashboard</CustomLink>.</li>
-
-    <li className="mb-1">I also try to invest in stocks, so if you have any advice, feel free to share it 😊</li>
-
-</ol>
+1. I am currently a Year 11 student studying at <CustomLink href="https://cgs.vic.edu.au">Camberwell Grammar School</CustomLink>.
+2. On <CustomLink href="/">this website</CustomLink>, I showcase myself as well as some other projects, including this <CustomLink href="/stock-dashboard">stock dashboard</CustomLink>.
+3. I also try to invest in stocks, so if you have any advice, feel free to share it 😊
 
 However, I feel like I should probably be looking for a job or maybe even starting a small business to earn some money at this age.
 
@@ -25,17 +19,21 @@ As with every other student, this period is quite daunting to me. It feels quite
 
 For reference, my VCE subjects are:
 
-* English Language
-* Mathematical Methods
-* Specialist Mathematics
-* Chinese Second Language
-* Chemistry
-* Physics
+- English Language
+- Mathematical Methods
+- Specialist Mathematics
+- Chinese Second Language
+- Chemistry
+- Physics
 
 I'm doing Methods and Chinese a year early in Year 11.
 
 ### Other Stuff
 
-not much other than...
+I am quite invested in following sports (not so much playing them).
 
-The funny button disappeared.
+My soccer/football team is Manchester City and I watch just about all their games. In AFL I go for the Swans and it was rather depressing watching them crumble against Geelong last year.
+
+Otherwise, my life is rather boring I'd say, I don't go out all that often and most of the time I'm just sat at my workstation literally AFK.
+
+If you want any advice on tech/productivity, I'm great at recommending stuff, not so good at following advice.

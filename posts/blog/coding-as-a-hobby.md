@@ -16,7 +16,7 @@ I took inspiration from many online to curate this site and it has enabled me to
 
 This was a project made for a school, term-long assignment, in which we were free to choose from programming in web development, game development or electronics.
 
-I chose to web development, and since in a commerce class we were playing an ASX sharemarket game (and that I was investing in shares), I decided to create a place to view some stocks as well as to filter them by their trends. Originally I also planned to create an AI predictor, but I  was already satisfied with what I had done, so I decided not to pursue it.
+I chose to web development, and since in a commerce class we were playing an ASX sharemarket game (and that I was investing in shares), I decided to create a place to view some stocks as well as to filter them by their trends. Originally I also planned to create an AI predictor, but I was already satisfied with what I had done, so I decided not to pursue it.
 
 In the end, I received an 'A' for my work, which I was satisfied with, given that I basically fell short of my original plan.
 
@@ -26,7 +26,7 @@ This was a small project, which taught me not only some python skills, but also 
 
 ### Manim
 
-This was perhaps my first venture into code when I was in Year 8, where I used 3Blue1Brown's library, Manim, for animating some videos. It wasn't to hard to learn, and it was my first foray into code so the outcomes were very nice in my opinion. I even used it in a science assessment and got full marks for it!
+This was perhaps my first venture into code when I was in Year 8, where I used 3Blue1Brown's library, Manim, for animating some videos. It wasn't too hard to learn, and it was my first foray into code so the outcomes were very nice in my opinion. I even used it in a science assessment and got full marks for it!
 
 ### Conclusion
 
