@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^13.1.1",
     "caniuse-lite": "^1.0.30001396",
     "chart.js": "^3.9.1",
     "chartjs-adapter-moment": "^1.0.0",
