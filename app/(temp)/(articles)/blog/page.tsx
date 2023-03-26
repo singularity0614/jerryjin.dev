@@ -1,5 +1,4 @@
 import { Title } from "../../../Formats";
-import Link from "next/link";
 import { getSortedPostsData } from "../../../posts";
 import Pagination from "./Pagination";
 
@@ -9,10 +8,6 @@ async function getData() {
 
 export default async function Page() {
     const postsData = await getData();
-
-    for (let i=0; i<100; i++) {
-        postsData.push({id: "test"});
-    }
 
     return (
         <> 
