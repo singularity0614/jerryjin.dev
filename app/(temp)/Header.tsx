@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import favicon from "../../public/favicons/favicon-128x128.png";
+import favicon from "../favicon.ico"
 import ThemeSwitcher from "../ThemeSwitcher";
 
 class NewLink {

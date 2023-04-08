@@ -1,5 +1,11 @@
 import StockDisplay from "./StockDisplay";
 import { Title } from "../../Formats";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Stock Dashboard - Jerry Jin",
+    description: "A stock dashboard created by the overlord, Jerry Jin.",
+}
 
 /**
  * For different graph views

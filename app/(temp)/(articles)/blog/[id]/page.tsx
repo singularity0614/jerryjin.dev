@@ -1,6 +1,15 @@
 import Article from "../../Article";
 import { getAllPostIds, getPostData } from "../../../../posts";
 
+export async function generateMetadata({params}) {
+    const postData = await getPost(params);
+
+    return {
+        title: postData.data.title,
+        description: postData.data.description,
+    }
+}
+
 export async function generateStaticParams() {
     const posts = getAllPostIds();
   

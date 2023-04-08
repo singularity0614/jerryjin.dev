@@ -2,6 +2,14 @@ import { getPostData } from "../../../posts";
 import { Title } from "../../../Formats";
 import Article from '../Article';
 
+export async function generateMetadata() {
+    const postData = getPostData('tech');
+
+    return {
+        title: postData.data.title,
+        description: postData.data.description,
+    }
+}
 
 export default function Tech() {
     const postData = getPostData('tech');

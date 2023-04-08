@@ -13,23 +13,7 @@ module.exports = {
         margin  : 'margin',
       },
       fontFamily: {
-        'proximanova': ['proxima-nova', 'sans-serif'],
-        sans: [
-          'proxima-nova',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          'var(--font-inter)',
-          '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
-          '"Noto Sans"',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
+        sans: ['proxima-nova', 'sans-serif'],
       },
       keyframes: {
         'fade-in-from-bottom': {
