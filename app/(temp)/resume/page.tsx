@@ -3,7 +3,7 @@ import ResumeContents from "./Resume"
 
 
 export const metadata: Metadata = {
-    title: "Resume - Jerry Jin",
+    title: "Resume",
     description: "Welcome to Jerry Jin's un-decorative resume.",
 }
 

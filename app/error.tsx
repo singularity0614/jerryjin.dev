@@ -1,12 +1,10 @@
 'use client'
 
-import Image from "next/image";
-
-export default function Error() {
+export default function Error({ error, reset }) {
     return (
         <>
-            <p>Error trying to load...</p>
-            <Image src="https://i.pinimg.com/originals/ce/57/77/ce5777bf7b7bd966ef14f4a0c7e4c845.gif" alt="Take the L" width={960} height={880} />
+            <p>An error occurred: {error.message}</p>
+            <button onClick={() => reset()}>Retry</button>
         </>
     )
 }

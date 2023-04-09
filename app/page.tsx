@@ -63,7 +63,7 @@ export default function Page() {
                                 <hr className="w-[80px] border-2 border-[#3DD9BD] dark:border-[#FBE83B] mt-4 mb-8 rounded-sm" />
                                 <div className="h-96 flex flex-col justify-between">
                                     <Pages title="About" route="/about" />
-                                    <Pages title="Intern" route="/" />
+                                    <Pages title="Resume" route="/resume" />
                                     <Pages title="Tech" route="/tech" />
                                     <Pages title="Blog" route="/blog" />
                                     <Pages title="Stock Dashboard" route="/stock-dashboard" />

@@ -39,11 +39,11 @@ export default function ResumeContents() {
                 </div>
             </div>
             <Slide number={0}>
-                <h3 className="font-medium text-5xl mt-24 mb-12">Education</h3>
-                <table className="table-fixed w-full">
+                <h3 className="font-medium text-5xl mt-24 mb-16">Education</h3>
+                <table className="table-fixed w-full mb-16">
                     <tbody>
                         <tr className="border-b-2 border-b-slate-200 dark:border-b-[#222222]">
-                            <td className="font-light text-lg pt-6 pb-12">2021-present</td>
+                            <td className="font-light text-lg pt-6 pb-12 w-56">2021-present</td>
                             <td className="text-2xl pt-6 pb-12">Camberwell Grammar School</td>
                         </tr>
                         <tr className="border-b-2 border-b-slate-200 dark:border-b-[#222222]">
@@ -58,12 +58,13 @@ export default function ResumeContents() {
                 </table>
             </Slide>
             <Slide number={1}>
-                <h3 className="font-medium text-3xl my-24">Experience</h3>
+                <h3 className="font-medium text-5xl mt-24 mb-12">Experience</h3>
+                N/A
             </Slide>
             <Slide number={2}>
-                <h3 className="font-medium text-3xl my-24">Something</h3>
+                <h3 className="font-medium text-5xl mt-24 mb-12">Achievements</h3>
+                N/A for now.
             </Slide>
-
         </>
     )
 }
