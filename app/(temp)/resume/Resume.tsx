@@ -59,11 +59,11 @@ export default function ResumeContents() {
             </Slide>
             <Slide number={1}>
                 <h3 className="font-medium text-5xl mt-24 mb-12">Experience</h3>
-                N/A
+                N/A looks pretty bad haha
             </Slide>
             <Slide number={2}>
                 <h3 className="font-medium text-5xl mt-24 mb-12">Achievements</h3>
-                N/A for now.
+                N/A for now as well
             </Slide>
         </>
     )
