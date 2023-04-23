@@ -1,5 +1,5 @@
 import Article from "../../Article";
-import { getAllPostIds, getPostData } from "../../../../posts";
+import { getAllPostIds, getPostData } from "../posts";
 
 export async function generateMetadata({params}) {
     const postData = await getPost(params);
@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 async function getPost(params) {
-    const post = getPostData(params.id, 'blog');
+    const post = getPostData(params.id);
 
     return post;
 }

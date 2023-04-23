@@ -5,7 +5,7 @@ import Markdown from "markdown-to-jsx";
 import Contents from "./Contents";
 import { Title, Heading3, Heading4, Paragraph, UnorderedList, OrderedList, ListItem, Footnote, CustomLink, CustomImage } from "../../Formats";
 
-export default function Article({postData, type=''}) {
+export default function Article({postData = null, type='', children = null}) {
     const [headings, setHeadings] = useState([]);
 
     useEffect(() => {
@@ -15,9 +15,6 @@ export default function Article({postData, type=''}) {
 
     const options = {
         overrides: {
-            CustomLink: {
-                component: CustomLink,
-            },
             h3: {
                 component: Heading3,
             },
@@ -39,6 +36,9 @@ export default function Article({postData, type=''}) {
             Footnote: {
                 component: Footnote,
             },
+            CustomLink: {
+                component: CustomLink,
+            },
             CustomImage: {
                 component: CustomImage,
             },
@@ -51,8 +51,8 @@ export default function Article({postData, type=''}) {
                 headings.length !== 0 ? <Contents headings={headings}></Contents> : null
             } 
             {
-                type === "blog" ? (
-                    <>
+                type === "blog" 
+                    ? (<>
                         <Title title="blog" image={false} />
                         <div className="mx-2 sm:mx-0">
                             <div className="bg-slate-100 dark:bg-[#111111] py-8 sm:py-12 my-6 sm:my-8 rounded-3xl">                
@@ -61,11 +61,10 @@ export default function Article({postData, type=''}) {
                             </div>
                             <Paragraph><CustomLink href="/blog">← All blogs</CustomLink></Paragraph>
                         </div>
-                    </>
-                    
-                ) : null
+                        <Markdown options={options} className="mx-2 sm:mx-0">{postData.content}</Markdown>
+                    </>) 
+                    : <>{children}</>
             }           
-            <Markdown options={options} className="mx-2 sm:mx-0">{postData.content}</Markdown>
             
         </>
     )

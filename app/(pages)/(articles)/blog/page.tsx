@@ -1,5 +1,5 @@
 import { Title } from "../../../Formats";
-import { getSortedPostsData } from "../../../posts";
+import { getSortedPostsData } from "./posts";
 import Pagination from "./Pagination";
 import { Metadata } from "next";
 

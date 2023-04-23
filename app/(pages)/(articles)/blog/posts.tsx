@@ -2,19 +2,17 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const postsDirectory = path.join(process.cwd(), 'posts');
+const postsDirectory = path.join(process.cwd(), 'app', '(pages)', '(articles)', 'blog', 'posts');
 
-export function getSortedPostsData(folderPath: string = 'blog') {
-    const folderDirectory = path.join(postsDirectory, folderPath);
-
+export function getSortedPostsData() {
     // Get file names under /posts
-    const fileNames = fs.readdirSync(folderDirectory);
+    const fileNames = fs.readdirSync(postsDirectory);
     const allPostsData = fileNames.map((fileName) => {
         // Remove ".md" from file name to get id
-        const id = fileName.replace(/\.md$/, '');
+        const id = fileName.replace(/\.mdx$/, '');
 
         // Read markdown file as string
-        const fullPath = path.join(folderDirectory, fileName);
+        const fullPath = path.join(postsDirectory, fileName);
         const fileContents = fs.readFileSync(fullPath, 'utf8');
 
         // Use gray-matter to parse the post metadata section
@@ -34,20 +32,19 @@ export function getSortedPostsData(folderPath: string = 'blog') {
     });
 }
 
-export function getAllPostIds(folderPath: string = 'blog') {
-    const folderDirectory = path.join(postsDirectory, folderPath);
+export function getAllPostIds() {
 
-    const fileNames = fs.readdirSync(folderDirectory);
+    const fileNames = fs.readdirSync(postsDirectory);
 
     return fileNames.map((fileName) => {
         return {
-            id: fileName.replace(/\.md$/, ''),
+            id: fileName.replace(/\.mdx$/, ''),
         };
     });
 }
 
-export function getPostData(id: string, folderPath: string = '') {
-    const fullPath = path.join(postsDirectory, folderPath, `${id}.md`);
+export function getPostData(id: string) {
+    const fullPath = path.join(postsDirectory, `${id}.mdx`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
   
     // Use gray-matter to parse the post metadata section

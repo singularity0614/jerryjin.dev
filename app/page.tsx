@@ -78,25 +78,25 @@ export default function Page() {
     );
 }
 
-function Skill(props) {
+function Skill({emoji, title, description}) {
     return (
         <>
             <div className="flex justify-between items-center p-3 my-3 sm:my-0 bg-slate-100 dark:bg-[#111111] rounded-lg hover:cursor-pointer">
-                <div className="text-3xl mx-3">{props.emoji}</div>
+                <div className="text-3xl mx-3">{emoji}</div>
                 <div className="ml-1 my-3">
-                    <p className="text-xl font-semibold mb-0.25">{props.title}</p>
-                    <p className="text-sm pr-3">{props.description}</p>
+                    <p className="text-xl font-semibold mb-0.25">{title}</p>
+                    <p className="text-sm pr-3">{description}</p>
                 </div>
             </div>
         </>
     );
 }
 
-function Pages(props) {
+function Pages({route, title}) {
     return (
         <>
             <div className="border-b-slate-200 dark:border-b-[#222222] border-b pb-6">
-                <p className="text-lg"><Link href={props.route}>{props.title}</Link></p>
+                <p className="text-lg"><Link href={route}>{title}</Link></p>
             </div>
         </>
     )
