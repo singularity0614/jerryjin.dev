@@ -11,7 +11,7 @@ export default function Resume() {
     return (
         <>
             <div className="flex justify-center mt-[10vw] xl:mt-32 mb-16">
-                <div className="w-[576px] md:w-[75vw]">
+                <div className="">
                     <ResumeContents></ResumeContents>
                 </div>
             </div>
