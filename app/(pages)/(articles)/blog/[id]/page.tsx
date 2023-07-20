@@ -30,6 +30,10 @@ export default async function Page({ params }) {
     return (
         <>
             <Article postData={postData} type="blog"></Article>
+            <div className="flex flex-col items-center bg-slate-100 dark:bg-[#111111] py-8 sm:py-12 my-6 sm:my-8 rounded-3xl">
+                <div className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] w-fit">"Your blog is the reason I'm still alive"</div>
+                <div className="text-lg text-gray-500 dark:text-gray-200">- Anonymous</div>
+            </div>
         </>
     )
 }
