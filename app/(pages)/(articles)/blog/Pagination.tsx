@@ -10,6 +10,10 @@ export default function Pagination({postsData}) {
     const pagesCount = Math.ceil(postsData.length/pageSize);
     const pagesArray = [...Array(pagesCount).keys()]; // 0 to pagesCount - 1
 
+    const [toggle, setToggle] = useState(true)
+    const [x, setX] = useState(true) // check if field is empty
+    const [y, setY] = useState(pageNum) // store last entered number
+
     return (
         <>
             <ul className="py-16">
@@ -34,28 +38,18 @@ export default function Pagination({postsData}) {
                             </button>
                         }
                         {
-                            pagesCount < 7
-                            ? <ul className="flex justify-center items-center">
-                                {
-                                    pagesArray.map((x, index) => (
-                                        <li key={index} className="mx-2 sm:mx-3">
-                                            <button onClick={() => setPageNum(x)} className={`${x === pageNum ? "bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC]" : "bg-slate-100 dark:bg-[#111111]"} w-10 h-10 rounded-lg`}>{x + 1}</button>
-                                        </li>
-                                    ))
-                                }
-                            </ul>  
-                            : <ul className="flex justify-center items-center">
+                            <ul className="flex justify-center items-center">
                                 <li className="mx-2 sm:mx-3">
                                     {
                                         pageNum < 3
                                         ? <div className="w-10 h-10 rounded-lg"></div>
-                                        : <button onClick={() => setPageNum(0)} className={`${0 === pageNum ? "bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC]" : "bg-slate-100 dark:bg-[#111111]"} w-10 h-10 rounded-lg`}>{1}</button>
+                                        : <button onClick={() => setPageNum(0)} className="bg-slate-100 dark:bg-[#111111] w-10 h-10 rounded-lg">{1}</button>
                                     }
                                 </li>
                                 <li className="mx-2 sm:mx-3">
                                     {
                                         pageNum === 2
-                                        ? <button onClick={() => setPageNum(pageNum-2)} className={`${pageNum - 2 === pageNum ? "bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC]" : "bg-slate-100 dark:bg-[#111111]"} w-10 h-10 rounded-lg`}>{pageNum-1}</button>
+                                        ? <button onClick={() => setPageNum(pageNum-2)} className="bg-slate-100 dark:bg-[#111111] w-10 h-10 rounded-lg">{pageNum-1}</button>
                                         : (
                                             pageNum < 2
                                             ? <div className="w-10 h-10 rounded-lg"></div>
@@ -67,23 +61,70 @@ export default function Pagination({postsData}) {
                                     {
                                         pageNum < 1
                                         ? <div className="w-10 h-10 rounded-lg"></div>
-                                        : <button onClick={() => setPageNum(pageNum-1)} className={`${pageNum - 1 === pageNum ? "bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC]" : "bg-slate-100 dark:bg-[#111111]"} w-10 h-10 rounded-lg`}>{pageNum}</button>
+                                        : <button onClick={() => setPageNum(pageNum-1)} className="bg-slate-100 dark:bg-[#111111] w-10 h-10 rounded-lg">{pageNum}</button>
                                     }
                                 </li>
                                 <li className="mx-2 sm:mx-3">
-                                    <button onClick={() => setPageNum(pageNum)} className={`${pageNum === pageNum ? "bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC]" : "bg-slate-100 dark:bg-[#111111]"} w-10 h-10 rounded-lg`}>{pageNum+1}</button>
+                                    <div className="bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC] w-10 h-10 rounded-lg flex justify-center items-center">
+                                        {
+                                            toggle ? (
+                                                <p onDoubleClick={() => {setToggle(false); setY(pageNum)}}>
+                                                    {
+                                                        x === true ? pageNum+1 : ""
+                                                    }
+                                                </p>
+                                            ) : (
+                                                <input
+                                                    className="appearance-none w-10 h-10 bg-transparent text-center focus:outline-none select-none"
+                                                    type='text'
+                                                    value={
+                                                        x === true ? pageNum+1 : ""
+                                                    }
+                                                    onChange={(event) => {
+                                                        if (event.target.value === "") {
+                                                            setX(false);
+                                                        } else {
+                                                            let num = Math.min(pagesCount, Math.max(1, parseInt(event.target.value)))
+                                                            setY(num-1);
+                                                            setPageNum(num-1);
+                                                            setX(true);
+                                                        }
+                                                    }}
+                                                    onKeyDown={(event) => {
+                                                        if (event.key === 'Enter' || event.key === 'Escape') {
+                                                            setX(true);
+                                                            if (event.key === 'Escape'){
+                                                                setPageNum(y);
+                                                            }
+                                                            setToggle(true);
+                                                            event.preventDefault();
+                                                            event.stopPropagation();
+                                                        }
+                                                    }}
+                                                    onBlur={(event) => {
+                                                            setX(true);
+                                                            setPageNum(y);
+                                                            setToggle(true);
+                                                            event.preventDefault();
+                                                            event.stopPropagation();
+                                                        }
+                                                    }
+                                                />
+                                            )
+                                        }
+                                    </div>
                                 </li>
                                 <li className="mx-2 sm:mx-3">
                                     {
                                         pageNum > pagesCount - 2
                                         ? <div className="w-10 h-10 rounded-lg"></div>
-                                        : <button onClick={() => setPageNum(pageNum+1)} className={`${pageNum + 1 === pageNum ? "bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC]" : "bg-slate-100 dark:bg-[#111111]"} w-10 h-10 rounded-lg`}>{pageNum+2}</button>
+                                        : <button onClick={() => setPageNum(pageNum+1)} className="bg-slate-100 dark:bg-[#111111] w-10 h-10 rounded-lg">{pageNum+2}</button>
                                     }
                                 </li>
                                 <li className="mx-2 sm:mx-3">
                                     {
                                         pageNum === pagesCount - 3
-                                        ? <button onClick={() => setPageNum(pageNum+2)} className={`${pageNum + 2 === pageNum ? "bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC]" : "bg-slate-100 dark:bg-[#111111]"} w-10 h-10 rounded-lg`}>{pageNum+3}</button>
+                                        ? <button onClick={() => setPageNum(pageNum+2)} className="bg-slate-100 dark:bg-[#111111] w-10 h-10 rounded-lg">{pageNum+3}</button>
                                         : (
                                             pageNum > pagesCount - 3
                                             ? <div className="w-10 h-10 rounded-lg"></div>
@@ -95,7 +136,7 @@ export default function Pagination({postsData}) {
                                     {
                                         pageNum > pagesCount - 4
                                         ? <div className="w-10 h-10 rounded-lg"></div>
-                                        : <button onClick={() => setPageNum(pagesCount-1)} className={`${pagesCount-1 === pageNum ? "bg-gradient-to-r from-[#049CB7] to-[#3DD9BD] dark:from-[#F2195A] dark:to-[#FBE83B] text-[#F8FAFC]" : "bg-slate-100 dark:bg-[#111111]"} w-10 h-10 rounded-lg`}>{pagesCount}</button>
+                                        : <button onClick={() => setPageNum(pagesCount-1)} className="bg-slate-100 dark:bg-[#111111] w-10 h-10 rounded-lg">{pagesCount}</button>
                                     }
                                 </li>
                             </ul>
