@@ -55,7 +55,7 @@ export default function Page() {
                                 <div className="sm:h-96 sm:flex sm:flex-col sm:justify-between">
                                     <Skill emoji="➗" title="Maths" description="An interesting subject which I have always been passionate about." />
                                     <Skill emoji="👨🏻‍💻" title="Coding" description="Recently started learning, I wish to continue with this and develop more skills." />
-                                    <Skill emoji="🧬" title="Science" description="Although not above average in terms of grades, I am still curious about the way the world works." />
+                                    <Skill emoji="🧪" title="Chemistry" description="Again, a recent interest which I've picked up, though I've always been interested about science." />
                                 </div>
                             </div>
                             <div className="sm:w-[480px] mx-4 sm:mx-8 pb-16 sm:py-8">

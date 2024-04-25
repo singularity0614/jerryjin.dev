@@ -8,7 +8,7 @@ function StockDisplay(props) {
     const price = props.price;
     const priceChange = props.priceChange;
     const colour = priceChange > 0 ? "text-[#137333]" : (priceChange < 0 ? "text-[#a50e0e]" : "text-[#3c4043]");
-    const backgroundColour = priceChange > 0 ? "bg-[#e8f4eb]" : (priceChange < 0 ? "bg-[#fce8e6]" : "bg-[#e8eaed]");
+    const backgroundColour = priceChange > 0 ? "bg-[#e8f4eb] dark:bg-[#81c995]" : (priceChange < 0 ? "bg-[#fce8e6] dark:bg-[#f28b82]" : "bg-[#e8eaed]");
     const sign = priceChange > 0 ? "+" : (priceChange < 0 ? "-" : "");
     const percentChange = (priceChange/(price-priceChange)*100).toFixed(2);
     const dollarSign = props.type === "stock" ? "$" : "";

@@ -51,7 +51,7 @@ export default function ResumeContents() {
                 <table className="table-fixed w-full mb-16">
                     <tbody>
                         <tr className="border-b-2 border-b-slate-200 dark:border-b-[#222222]">
-                            <td className="font-light text-lg pt-6 pb-12 w-56">2021-present</td>
+                            <td className="font-light text-lg pt-6 pb-12 w-56">2021-2024</td>
                             <td className="text-2xl pt-6 pb-12">Camberwell Grammar School</td>
                         </tr>
                         <tr className="border-b-2 border-b-slate-200 dark:border-b-[#222222]">
@@ -72,6 +72,7 @@ export default function ResumeContents() {
             <Slide number={2}>
                 <h3 className="font-medium text-5xl mt-24 mb-12">Achievements</h3>
                 (Very limited) stuff coming soon...
+                AChO silver medalist
             </Slide>
         </>
     )
