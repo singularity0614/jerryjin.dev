@@ -8,6 +8,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'jblue': '#049CB7',
+        'jgreen': '#3DD9BD',
+        'jred': '#F2195A',
+        'jyellow': '#FBE83B',
+      },
       transitionProperty: {
         maxHeight: 'max-height',
         margin  : 'margin',
@@ -92,6 +98,14 @@ module.exports = {
             'background-position': 'left center'
           },
         },
+        'rotate-grad': {
+          '0%': {
+            'transform':'rotate(0deg)',
+          },
+          '100%': {
+            'transform':'rotate(360deg)',
+          },
+        },
       },
       animation: {
         'fade-in-from-bottom': 'fade-in-from-bottom 800ms cubic-bezier(0.4, 0, 0.25, 1)',
@@ -101,6 +115,7 @@ module.exports = {
         'slide-out-to-top': 'slide-out-to-top 800ms forwards',
         'gradient-anim': 'gradient-anim 10s ease infinite',
         'shine': 'shine 8s infinite',
+        'rotate-grad': 'rotate-grad 50s cubic-bezier(0.8, 0.2, 0.2, 0.8) alternate infinite',
       }
     },
   },

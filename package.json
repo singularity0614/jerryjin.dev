@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.3.1",
     "chart.js": "^3.9.1",
@@ -18,9 +17,9 @@
     "gray-matter": "^4.0.3",
     "markdown-to-jsx": "^7.1.8",
     "moment": "^2.29.4",
-    "next": "^14.2.3",
+    "next": "^14.2.5",
     "next-themes": "^0.2.1",
-    "npm": "^10.1.0",
+    "npm": "^10.8.2",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0"

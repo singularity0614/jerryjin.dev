@@ -50,7 +50,7 @@ export default function Page() {
                     <div ref={scrollToRef} className="sm:py-32">
                         <div className="sm:flex sm:justify-center sm:items-center">
                             <div className="sm:w-[480px] mx-4 sm:mx-8 py-16 sm:py-8">
-                                <h1 className="text-5xl font-semibold">Skills</h1>
+                                <h1 className="text-5xl font-semibold"><Link href="/skills">Skills</Link></h1>
                                 <hr className="w-[80px] border-2 border-[#049CB7] dark:border-[#F2195A] mt-4 mb-8 rounded-sm" />
                                 <div className="sm:h-96 sm:flex sm:flex-col sm:justify-between">
                                     <Skill emoji="➗" title="Maths" description="An interesting subject which I have always been passionate about." />

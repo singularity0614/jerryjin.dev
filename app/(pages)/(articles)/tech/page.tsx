@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Tech() {
     return (
         <>
-            <Title title="tech" image={true} alt="Mac mini" src="https://www.apple.com/v/mac-mini/q/images/overview/hero__x8ruukomx2au_large_2x.jpg" />
+            <Title title="tech" image={true} alt="Mac mini" src="https://www.apple.com/newsroom/images/2024/05/apple-unveils-stunning-new-ipad-pro-with-m4-chip-and-apple-pencil-pro/article/Apple-iPad-Pro-hero-240507_big.jpg.large.jpg" />
             <Article>
                 <Content></Content>
             </Article>
