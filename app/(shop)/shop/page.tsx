@@ -1,12 +1,12 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "About Me",
-    description: "About the overlord, Jerry Jin.",
+    title: "Shop",
+    description: "Selling goods to buy from Jerry Jin.",
 }
 
 export default function Shop() {
     return (
-        <>to come soon</>
+        <>to come soon (end of 2024)</>
     )
 }
