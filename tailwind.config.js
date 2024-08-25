@@ -19,7 +19,7 @@ module.exports = {
         margin  : 'margin',
       },
       fontFamily: {
-        sans: ['proxima nova', 'sans-serif'],
+        sans: ['proxima-nova', 'sans-serif'],
       },
       keyframes: {
         'fade-in-from-bottom': {
