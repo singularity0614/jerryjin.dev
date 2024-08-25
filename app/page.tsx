@@ -72,6 +72,22 @@ export default function Page() {
                         </div>
                     </div>
                 </section>
+                <section>
+                    <div className="pt-16 border-t-2 border-t-slate-200 dark:border-t-[#222222]">
+                        <div className="sm:flex sm:justify-center sm:items-center text-4xl">
+                            <h1 className="text-5xl font-semibold">Watch this: (cause why not)</h1>
+                        </div>
+                    </div>
+                    <div className="sm:py-16">
+                        <div className="sm:flex sm:justify-center sm:items-center">
+                            <iframe
+                                className="w-[64vw] h-[36vw]"
+                                src="https://www.youtube.com/embed/2XyVW688-pk?si=LxIb5Uk1yazdrWob"
+                                allowFullScreen
+                            />
+                        </div>
+                    </div>
+                </section>
             </main>
             <Footer />
         </>
