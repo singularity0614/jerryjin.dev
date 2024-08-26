@@ -13,11 +13,11 @@ export default function Tutoring() {
             <Subject name={"Chemistry"} description={"VCE. Olympiad."} link={"/tutoring/chemistry"} />
 
             <div className="border-t-2 border-slate-200 dark:border-t-[#222222]">
-                <div className="text-5xl font-semibold pt-24 pl-64">
+                <div className="text-5xl font-semibold pt-6 pl-6 md:pt-24 md:pl-24 xl:pt-24 xl:pl-64">
                     About
                 </div>
-                <div className="px-64 relative pb-8 mb-16">
-                    <div className="pt-8 text-xl">
+                <div className="px-6 md:px-24 xl:px-64 relative pb-2 md:pb-8 mb-4 md:mb-16">
+                    <div className=" pt-4 lg:pt-8 text-xl">
                         Hey what&apos;s up! I&apos;m Jerry, a student (currently at Camberwell Grammar School). Yeah, we&apos;re probs pretty similar in that regard. In fact, I&apos;ve gone through school life with all its ups and downs, feeling the lows and celebrating the highs. I&apos;m interested in teaching anything Maths or Chemistry related (for now, might expand) to any student at any level.
                     </div>
                     <div className="pt-4 text-xl">
