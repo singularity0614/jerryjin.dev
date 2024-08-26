@@ -14,6 +14,7 @@ class NewLink {
 }
 
 const links = [
+    new NewLink("tutoring", "/tutoring"),
     new NewLink("contact", "/tutoring/contact"),
 ]
 

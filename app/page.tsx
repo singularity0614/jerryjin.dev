@@ -73,12 +73,12 @@ export default function Page() {
                     </div>
                 </section>
                 <section>
-                    <div className="sm:pt-16 border-t-2 border-t-slate-200 dark:border-t-[#222222]">
+                    <div className="pt-8 sm:pt-16 border-t-2 border-t-slate-200 dark:border-t-[#222222]">
                         <div className="flex justify-center items-center">
-                            <h1 className="text-5xl font-semibold">Watch this: (cause why not)</h1>
+                            <h1 className="text-3xl sm:text-5xl font-semibold">Watch this: (cause why not)</h1>
                         </div>
                     </div>
-                    <div className="sm:py-16">
+                    <div className="py-8 sm:py-16">
                         <div className="flex justify-center items-center">
                             <iframe
                                 className="w-[64vw] h-[36vw]"
