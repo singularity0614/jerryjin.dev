@@ -16,7 +16,7 @@ export default function Subject({name, description, link}) {
                     </button>
                     <button className="bg-gradient-to-r from-[#21BBBA] to-[#3DD9BD] dark:from-[#F7814B] dark:to-[#FBE83B] text-[#F8FAFC] p-[1px] rounded-full">
                         <span className="transition dark:hover:bg-transparent hover:bg-transparent hover:text-[#F8FAFC] duration-300 ease-in-out flex w-full bg-[#F8FAFC] text-[#222222] dark:bg-black dark:text-[#F8FAFC] px-[15px] py-[9px] rounded-full">
-                            Enquire
+                        <Link href="/tutoring/contact">Enquire</Link>
                         </span>
                     </button>
                 </div>
